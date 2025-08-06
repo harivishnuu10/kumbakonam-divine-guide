@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -61,7 +62,26 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				temple: {
+					saffron: 'hsl(var(--temple-saffron))',
+					gold: 'hsl(var(--temple-gold))',
+					red: 'hsl(var(--temple-deep-red))',
+					stone: 'hsl(var(--temple-stone))'
 				}
+			},
+			backgroundImage: {
+				'gradient-temple': 'var(--gradient-temple)',
+				'gradient-sunset': 'var(--gradient-sunset)',
+				'gradient-gold': 'var(--gradient-gold)'
+			},
+			boxShadow: {
+				'temple': 'var(--shadow-temple)',
+				'gold': 'var(--shadow-gold)',
+				'soft': 'var(--shadow-soft)'
+			},
+			transitionTimingFunction: {
+				'temple': 'var(--transition-temple)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

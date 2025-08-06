@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Temple-inspired design system with warm, spiritual colors */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Base temple colors inspired by Kumbakonam architecture */
+    --background: 35 15% 97%;
+    --foreground: 20 20% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 98%;
+    --card-foreground: 20 20% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 25% 98%;
+    --popover-foreground: 20 20% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Temple saffron primary palette */
+    --primary: 25 85% 55%;
+    --primary-foreground: 40 25% 98%;
+    --primary-glow: 35 90% 65%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Temple gold secondary */
+    --secondary: 45 75% 85%;
+    --secondary-foreground: 20 20% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted temple stone */
+    --muted: 40 15% 92%;
+    --muted-foreground: 20 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Temple accent red */
+    --accent: 10 70% 60%;
+    --accent-foreground: 40 25% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 25% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 25 85% 55%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Temple-specific design tokens */
+    --temple-saffron: 25 85% 55%;
+    --temple-gold: 45 75% 75%;
+    --temple-deep-red: 10 70% 45%;
+    --temple-stone: 40 15% 85%;
+    
+    /* Beautiful gradients */
+    --gradient-temple: linear-gradient(135deg, hsl(25 85% 55%), hsl(35 90% 65%));
+    --gradient-sunset: linear-gradient(180deg, hsl(35 90% 65%), hsl(10 70% 60%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 75% 75%), hsl(50 80% 85%));
+    
+    /* Elegant shadows */
+    --shadow-temple: 0 10px 30px -10px hsl(25 85% 55% / 0.3);
+    --shadow-gold: 0 4px 20px -4px hsl(45 75% 75% / 0.4);
+    --shadow-soft: 0 2px 10px -2px hsl(20 20% 15% / 0.1);
+    
+    /* Smooth transitions */
+    --transition-temple: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
