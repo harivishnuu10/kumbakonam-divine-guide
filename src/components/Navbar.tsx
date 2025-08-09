@@ -1,14 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Home, MapPin, MessageCircle } from "lucide-react";
+import { Home, MapPin, MessageCircle, Hotel, Map } from "lucide-react";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Navbar = () => {
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems = [
-    { path: "/", label: "Home", icon: Home },
-    { path: "/temples", label: "Temples", icon: MapPin },
-    { path: "/chat", label: "Ask AI", icon: MessageCircle },
+    { path: "/", label: t("home"), icon: Home },
+    { path: "/temples", label: t("temples"), icon: MapPin },
+    { path: "/hotels", label: t("hotels"), icon: Hotel },
+    { path: "/map", label: t("map"), icon: Map },
+    { path: "/chat", label: t("chat"), icon: MessageCircle },
   ];
 
   return (
@@ -38,6 +43,7 @@ const Navbar = () => {
                 </Link>
               </Button>
             ))}
+            <LanguageToggle />
           </div>
         </div>
       </div>
