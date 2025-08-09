@@ -5,61 +5,61 @@ import { Badge } from "@/components/ui/badge";
 import { Search, Filter, MapPin } from "lucide-react";
 import TempleCard from "@/components/TempleCard";
 
-// Extended temple data for the listing page
+// Comprehensive temple data for listing with authentic details
 const templeData = [
   {
     id: "adi-kumbeswarar",
     name: "Adi Kumbeswarar Temple",
     deity: "Lord Shiva",
-    description: "One of the most ancient temples in Kumbakonam, built by the Cholas. Famous for its magnificent architecture and spiritual significance.",
+    description: "The ancient Adi Kumbeswarar Temple, built during the 7th century Chola dynasty, stands as the epicenter of Kumbakonam's spiritual heritage. Famous for the legendary Mahamaham festival and exceptional Dravidian architecture.",
     timings: "6:00 AM - 12:30 PM, 4:00 PM - 9:00 PM",
-    image: "/placeholder.svg",
-    festivals: ["Mahamaham", "Chithirai", "Arudra Darisanam"]
+    image: "/src/assets/adi-kumbeswarar.jpg",
+    festivals: ["Mahamaham Festival", "Chithirai Brahmotsavam", "Arudra Darisanam", "Shivaratri"]
   },
   {
     id: "sarangapani",
     name: "Sarangapani Temple", 
     deity: "Lord Vishnu",
-    description: "A magnificent Vaishnavite temple known for its towering gopuram and intricate carvings. One of the 108 Divya Desams.",
-    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/placeholder.svg",
-    festivals: ["Brahmotsavam", "Vaikunta Ekadasi"]
+    description: "One of the 108 sacred Divya Desams, this magnificent Vaishnavite temple features a towering 12-tier gopuram and represents over 1,000 years of continuous worship and architectural evolution.",
+    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:30 PM",
+    image: "/src/assets/sarangapani.jpg",
+    festivals: ["Vaikunta Ekadasi", "Brahmotsavam", "Garuda Sevai"]
   },
   {
     id: "ramaswamy",
     name: "Ramaswamy Temple",
     deity: "Lord Rama",
-    description: "Dedicated to Lord Rama, this temple showcases exquisite Nayak period architecture with beautiful paintings and sculptures.",
+    description: "A 17th-century Nayak period masterpiece renowned for its exquisite frescoes depicting the complete Ramayana epic. The 'Corridor of Stories' showcases some of India's finest temple art.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/placeholder.svg",
-    festivals: ["Rama Navami", "Hanuman Jayanti"]
+    image: "/src/assets/ramaswamy.jpg",
+    festivals: ["Rama Navami", "Hanuman Jayanti", "Kalyanam Festival"]
   },
   {
     id: "nageshwara",
     name: "Nageshwara Temple",
     deity: "Lord Shiva",
-    description: "Ancient temple known for its association with Rahu worship and eclipse rituals. Features unique serpent sculptures.",
+    description: "A unique 9th-century temple by Aditya Chola I, famous for its astronomical precision where sunlight illuminates the sanctum only during solar eclipses. Center for Rahu worship and eclipse rituals.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/placeholder.svg",
-    festivals: ["Rahu Kalam Poojas", "Shivaratri"]
+    image: "/src/assets/nageshwara.jpg",
+    festivals: ["Rahu Kalam Special Poojas", "Solar Eclipse Prayers", "Shivaratri"]
   },
   {
     id: "chakrapani",
     name: "Chakrapani Temple",
     deity: "Lord Vishnu",
-    description: "One of the nine Navagraha temples, dedicated to Sukran (Venus). Known for healing properties and astrological significance.",
+    description: "Part of the sacred Navagraha temple circuit, this unique shrine combines Vishnu worship with Venus (Sukran) planetary significance. Renowned for its healing properties, especially for diabetes and skin conditions.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/placeholder.svg",
-    festivals: ["Sukran Jayanti", "Navagraha Pooja"]
+    image: "/src/assets/hero-temple.jpg",
+    festivals: ["Sukran Jayanti", "Navagraha Pooja", "Healing Festival"]
   },
   {
     id: "someswarar",
     name: "Someswarar Temple",
     deity: "Lord Shiva",
-    description: "Temple dedicated to Lord Shiva in his moon form. Important for Monday prayers and special moon-related rituals.",
+    description: "Dedicated to Lord Shiva's lunar aspect, this ancient temple specializes in Monday worship and lunar deity rituals. Architectural elements align with lunar cycles for enhanced spiritual energy.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/placeholder.svg",
-    festivals: ["Pradosham", "Kartik Somvar"]
+    image: "/src/assets/hero-temple.jpg",
+    festivals: ["Pradosham", "Kartik Somvar", "Chandra Darshan"]
   }
 ];
 

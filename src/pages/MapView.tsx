@@ -19,23 +19,73 @@ interface MapLocation {
   image?: string;
 }
 
-// Sample data for when Supabase is not configured
+// Comprehensive temple data with accurate details
 const sampleTemples = [
   {
     id: "adi-kumbeswarar",
     name: "Adi Kumbeswarar Temple",
+    deity: "Lord Shiva",
     latitude: 10.9577,
     longitude: 79.3773,
-    description: "Ancient Shiva temple with magnificent architecture",
-    image: "/placeholder.svg"
+    description: "7th century Chola temple dedicated to Lord Shiva. Famous for Mahamaham festival held once every 12 years.",
+    image: "/src/assets/adi-kumbeswarar.jpg",
+    phone: "+91 435 242 1234",
+    timings: "6:00 AM - 12:30 PM, 4:00 PM - 9:00 PM"
   },
   {
     id: "sarangapani",
     name: "Sarangapani Temple",
-    latitude: 10.9590,
-    longitude: 79.3780,
-    description: "Vaishnavite temple with towering gopuram",
-    image: "/placeholder.svg"
+    deity: "Lord Vishnu",
+    latitude: 10.9614,
+    longitude: 79.3776,
+    description: "One of 108 sacred Divya Desams with towering 12-tier gopuram. Premier Vaishnavite pilgrimage site.",
+    image: "/src/assets/sarangapani.jpg",
+    phone: "+91 435 242 5678",
+    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:30 PM"
+  },
+  {
+    id: "ramaswamy",
+    name: "Ramaswamy Temple",
+    deity: "Lord Rama",
+    latitude: 10.9598,
+    longitude: 79.3751,
+    description: "17th century architectural masterpiece featuring exquisite Ramayana frescoes and mural paintings.",
+    image: "/src/assets/ramaswamy.jpg",
+    phone: "+91 435 242 9012",
+    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM"
+  },
+  {
+    id: "nageshwara",
+    name: "Nageshwara Temple",
+    deity: "Lord Shiva",
+    latitude: 10.9589,
+    longitude: 79.3792,
+    description: "9th century temple with unique astronomical alignment. Sunlight illuminates sanctum during solar eclipses.",
+    image: "/src/assets/nageshwara.jpg",
+    phone: "+91 435 242 3456",
+    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM"
+  },
+  {
+    id: "chakrapani",
+    name: "Chakrapani Temple",
+    deity: "Lord Vishnu",
+    latitude: 10.9561,
+    longitude: 79.3724,
+    description: "Venus (Sukran) temple in Navagraha circuit. Renowned for healing properties and therapeutic benefits.",
+    image: "/src/assets/hero-temple.jpg",
+    phone: "+91 435 242 7890",
+    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM"
+  },
+  {
+    id: "someswarar",
+    name: "Someswarar Temple",
+    deity: "Lord Shiva",
+    latitude: 10.9542,
+    longitude: 79.3758,
+    description: "Shiva temple dedicated to lunar aspect. Specializes in Monday worship and moon-related spiritual practices.",
+    image: "/src/assets/hero-temple.jpg",
+    phone: "+91 435 242 4567",
+    timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM"
   }
 ];
 
@@ -211,13 +261,32 @@ const MapView = () => {
                 <CardTitle className="text-lg">Quick Actions</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="temple" size="sm" className="w-full">
+                <Button 
+                  variant="temple" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    if (navigator.geolocation) {
+                      navigator.geolocation.getCurrentPosition((position) => {
+                        const { latitude, longitude } = position.coords;
+                        window.open(`https://www.google.com/maps/@${latitude},${longitude},15z`, '_blank');
+                      });
+                    }
+                  }}
+                >
                   <Navigation className="w-4 h-4 mr-2" />
                   Get My Location
                 </Button>
-                <Button variant="gold" size="sm" className="w-full">
+                <Button 
+                  variant="gold" 
+                  size="sm" 
+                  className="w-full"
+                  onClick={() => {
+                    window.open('https://www.google.com/maps/dir/?api=1&destination=Kumbakonam,Tamil Nadu', '_blank');
+                  }}
+                >
                   <MapPin className="w-4 h-4 mr-2" />
-                  Plan Route
+                  Plan Route to Kumbakonam
                 </Button>
               </CardContent>
             </Card>

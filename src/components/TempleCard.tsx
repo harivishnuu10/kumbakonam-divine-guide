@@ -21,8 +21,11 @@ const TempleCard = ({ id, name, deity, description, timings, image, festivals }:
         <div className="relative overflow-hidden rounded-t-lg">
           <img
             src={image}
-            alt={name}
+            alt={`${name} - Ancient temple in Kumbakonam, Tamil Nadu`}
             className="w-full h-48 object-cover group-hover:scale-105 transition-temple"
+            onError={(e) => {
+              e.currentTarget.src = '/src/assets/hero-temple.jpg';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           <Badge className="absolute top-3 left-3 bg-gradient-temple text-primary-foreground">

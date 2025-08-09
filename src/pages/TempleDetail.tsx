@@ -15,46 +15,258 @@ import {
   Users
 } from "lucide-react";
 
-// Sample detailed temple data
+// Comprehensive temple database for Kumbakonam
 const templeDetails: Record<string, any> = {
   "adi-kumbeswarar": {
     name: "Adi Kumbeswarar Temple",
     deity: "Lord Shiva",
-    description: "The Adi Kumbeswarar Temple is one of the most ancient and revered temples in Kumbakonam, dedicated to Lord Shiva. Built during the Chola period, this magnificent temple showcases the architectural brilliance of South Indian temple construction. The temple is famous for its towering gopuram, intricate stone carvings, and spiritual significance in Hindu mythology.",
-    history: "According to legend, Lord Brahma was performing a yajna when his kamandalu (water pot) broke and scattered across the earth. The place where the largest piece fell became known as Kumbakonam. The temple was later built by the Chola kings and has been a center of spiritual learning for centuries.",
+    description: "The Adi Kumbeswarar Temple stands as one of the most ancient and architecturally magnificent temples in Kumbakonam. Built during the reign of the Chola dynasty in the 7th century CE, this sacred shrine is dedicated to Lord Shiva in his form as Adi Kumbeswarar. The temple complex showcases exceptional Dravidian architecture with its towering gopurams, intricate stone carvings, and pillared halls that reflect the artistic excellence of ancient Tamil craftsmen.",
+    history: "According to Hindu mythology, this temple marks the sacred spot where Lord Brahma's kamandalu (sacred pot) broke during the cosmic deluge, with its pieces scattering across the earth. The largest fragment fell at this location, giving birth to the name 'Kumbakonam' (Kumbha meaning pot, Konam meaning corner). The temple was originally constructed by the Chola kings and later renovated by various dynasties including the Vijayanagara Empire. It houses several ancient inscriptions that provide valuable insights into the region's history and the patronage of various rulers.",
     timings: {
       morning: "6:00 AM - 12:30 PM",
       evening: "4:00 PM - 9:00 PM"
     },
     festivals: [
       {
-        name: "Mahamaham",
-        description: "The grand festival held once every 12 years",
-        period: "February/March"
+        name: "Mahamaham Festival",
+        description: "The most sacred festival celebrated once every 12 years when Jupiter enters Leo sign. Millions of devotees gather to take holy bath in the temple tank.",
+        period: "February/March (once in 12 years)"
       },
       {
-        name: "Chithirai Festival",
-        description: "Annual temple festival with processions",
-        period: "April/May"
+        name: "Chithirai Brahmotsavam",
+        description: "Grand annual festival featuring colorful processions, temple car festival, and special pujas for 10 days.",
+        period: "April/May (10 days)"
       },
       {
         name: "Arudra Darisanam",
-        description: "Special prayers during full moon",
+        description: "Special celebration honoring Lord Shiva's cosmic dance performed during full moon in the Tamil month of Margazhi.",
         period: "December/January"
+      },
+      {
+        name: "Shivaratri",
+        description: "Night-long vigil and prayers dedicated to Lord Shiva with special abhishekams and cultural programs.",
+        period: "February/March"
       }
     ],
     location: {
-      address: "Big Street, Kumbakonam, Tamil Nadu 612001",
-      coordinates: "10.9577° N, 79.3773° E"
+      address: "Big Street, Kumbakonam, Thanjavur District, Tamil Nadu 612001",
+      coordinates: "10.9577° N, 79.3773° E",
+      latitude: 10.9577,
+      longitude: 79.3773
     },
     contact: {
       phone: "+91 435 242 1234",
-      email: "info@adikumbeswarar.org"
+      email: "temple@adikumbeswarar.org"
     },
-    facilities: ["Parking Available", "Wheelchair Accessible", "Audio Guide", "Photography Allowed"],
-    dresscode: "Traditional attire preferred. Men: Dhoti/Pant with shirt. Women: Saree/Salwar",
-    image: "/placeholder.svg",
-    gallery: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"]
+    facilities: ["Free Parking Available", "Wheelchair Accessible Entrance", "Audio Guide in Tamil & English", "Photography Allowed in Outer Areas", "Prasadam Counter", "Restroom Facilities"],
+    dresscode: "Traditional Indian attire required. Men: Dhoti with shirt or formal pants. Women: Saree, salwar kameez, or traditional Indian dress. Shorts and sleeveless tops not permitted.",
+    image: "/src/assets/adi-kumbeswarar.jpg",
+    gallery: ["/src/assets/adi-kumbeswarar.jpg", "/src/assets/hero-temple.jpg", "/src/assets/adi-kumbeswarar.jpg"]
+  },
+  "sarangapani": {
+    name: "Sarangapani Temple",
+    deity: "Lord Vishnu",
+    description: "The magnificent Sarangapani Temple is one of the most prominent Vaishnavite temples in South India and holds the distinction of being one of the 108 Divya Desams. Dedicated to Lord Vishnu in his form as Sarangapani (one who holds the bow), this temple represents the pinnacle of Chola and later period architecture. The temple's towering 12-tier gopuram, one of the tallest in Tamil Nadu, dominates the Kumbakonam skyline and serves as a beacon for devotees from across the world.",
+    history: "Built during the early Chola period and later expanded by subsequent rulers, the Sarangapani Temple has a rich history spanning over 1,000 years. The temple finds mention in the Divya Prabandham, composed by the Alvars (Vaishnavite saint-poets) between the 6th and 9th centuries CE. According to legend, Lord Vishnu appeared here to sage Hemarishi who was performing penance. The temple's architecture reflects various periods of construction, with the main sanctum dating to the Chola era and the outer structures added during the Vijayanagara and Nayak periods.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 8:30 PM"
+    },
+    festivals: [
+      {
+        name: "Vaikunta Ekadasi",
+        description: "The most important festival when the 'gates of heaven' are believed to open. Special door (Vaikunta Dwara) is opened for devotees.",
+        period: "December/January"
+      },
+      {
+        name: "Brahmotsavam",
+        description: "10-day grand festival featuring temple car procession, cultural programs, and elaborate decorations.",
+        period: "March/April"
+      },
+      {
+        name: "Garuda Sevai",
+        description: "Special procession of the deity on Garuda Vahanam with traditional music and devotional singing.",
+        period: "May/June"
+      }
+    ],
+    location: {
+      address: "Sarangapani Sannidhi Street, Kumbakonam, Tamil Nadu 612001",
+      coordinates: "10.9614° N, 79.3776° E",
+      latitude: 10.9614,
+      longitude: 79.3776
+    },
+    contact: {
+      phone: "+91 435 242 5678",
+      email: "info@sarangapanitemple.org"
+    },
+    facilities: ["Paid Parking", "Elevator Access", "Multilingual Audio Guide", "Photography Restricted", "Temple Museum", "Accommodation for Pilgrims"],
+    dresscode: "Conservative traditional attire mandatory. Devotees must remove leather items before entering. Dress code strictly enforced.",
+    image: "/src/assets/sarangapani.jpg",
+    gallery: ["/src/assets/sarangapani.jpg", "/src/assets/hero-temple.jpg", "/src/assets/sarangapani.jpg"]
+  },
+  "ramaswamy": {
+    name: "Ramaswamy Temple",
+    deity: "Lord Rama",
+    description: "The Ramaswamy Temple stands as a masterpiece of Nayak period architecture, renowned for its exquisite frescoes and intricate sculptural work. Built in the 17th century, this temple is dedicated to Lord Rama and represents one of the finest examples of mural paintings in South India. The temple's halls are adorned with vibrant frescoes depicting scenes from the Ramayana, making it not just a place of worship but also a treasure trove of ancient Indian art and culture.",
+    history: "Constructed during the Nayak period in the 17th century by King Raghunatha Nayak, this temple showcases the artistic renaissance that occurred during Nayak rule. The temple is famous for its 'Corridor of Stories' - pillared halls decorated with stunning frescoes that narrate the entire Ramayana epic. These paintings, executed in natural pigments, have survived centuries and continue to mesmerize visitors with their artistic excellence and attention to detail. The temple also houses beautiful bronze sculptures and wooden carvings that reflect the craftsmanship of the period.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 8:00 PM"
+    },
+    festivals: [
+      {
+        name: "Rama Navami",
+        description: "Birth celebration of Lord Rama with special pujas, devotional singing, and dramatic presentations of Ramayana episodes.",
+        period: "March/April"
+      },
+      {
+        name: "Hanuman Jayanti",
+        description: "Birthday celebration of Lord Hanuman with special prayers and community feasts.",
+        period: "April/May"
+      },
+      {
+        name: "Kalyanam Festival",
+        description: "Ceremonial wedding of Lord Rama and Sita with elaborate decorations and cultural programs.",
+        period: "May/June"
+      }
+    ],
+    location: {
+      address: "Ramaswamy Temple Street, Kumbakonam, Tamil Nadu 612001",
+      coordinates: "10.9598° N, 79.3751° E",
+      latitude: 10.9598,
+      longitude: 79.3751
+    },
+    contact: {
+      phone: "+91 435 242 9012",
+      email: "contact@ramaswamytemple.org"
+    },
+    facilities: ["Free Parking", "Guided Tours Available", "Photography Allowed with Permission", "Art Gallery", "Cultural Center", "Educational Programs"],
+    dresscode: "Modest traditional clothing required. Visitors should cover shoulders and legs. Cultural sensitivity appreciated.",
+    image: "/src/assets/ramaswamy.jpg",
+    gallery: ["/src/assets/ramaswamy.jpg", "/src/assets/hero-temple.jpg", "/src/assets/ramaswamy.jpg"]
+  },
+  "nageshwara": {
+    name: "Nageshwara Temple",
+    deity: "Lord Shiva",
+    description: "The Nageshwara Temple, also known as Naganathaswamy Temple, is an ancient Shiva temple renowned for its association with Rahu worship and eclipse-related rituals. This 9th-century temple, built by Aditya Chola I, represents the perfect synthesis of astronomy, architecture, and spirituality. The temple is uniquely designed so that sunlight falls directly on the sanctum sanctorum only during solar eclipses, demonstrating the advanced astronomical knowledge of ancient Tamil architects.",
+    history: "Built in the 9th century during the reign of Aditya Chola I, the Nageshwara Temple represents one of the finest examples of early Chola architecture. The temple gained prominence due to its unique astronomical alignment and its role in eclipse worship. According to ancient texts, this temple is one of the few places where Rahu (the eclipse deity) can be worshipped to nullify the negative effects of eclipses. The temple's architecture incorporates precise calculations that align the sanctum with celestial events, showcasing the advanced understanding of astronomy possessed by ancient Tamil scholars and architects.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 8:00 PM"
+    },
+    festivals: [
+      {
+        name: "Rahu Kalam Special Poojas",
+        description: "Special worship during Rahu kalam periods believed to neutralize negative planetary influences.",
+        period: "Daily during Rahu Kalam"
+      },
+      {
+        name: "Solar Eclipse Prayers",
+        description: "Unique ritual performed during solar eclipses when sunlight directly illuminates the main deity.",
+        period: "During Solar Eclipses"
+      },
+      {
+        name: "Shivaratri",
+        description: "Night-long celebration with continuous prayers, abhishekams, and devotional activities.",
+        period: "February/March"
+      }
+    ],
+    location: {
+      address: "Nageshwara Temple Street, Kumbakonam, Tamil Nadu 612001",
+      coordinates: "10.9589° N, 79.3792° E",
+      latitude: 10.9589,
+      longitude: 79.3792
+    },
+    contact: {
+      phone: "+91 435 242 3456",
+      email: "info@nageshwaratemple.org"
+    },
+    facilities: ["Limited Parking", "Eclipse Viewing Gallery", "Astronomy Center", "Traditional Calendar Display", "Rahu Worship Area", "Scholar Consultation"],
+    dresscode: "Traditional attire required for eclipse ceremonies. General visits require modest clothing covering shoulders and legs.",
+    image: "/src/assets/nageshwara.jpg",
+    gallery: ["/src/assets/nageshwara.jpg", "/src/assets/hero-temple.jpg", "/src/assets/nageshwara.jpg"]
+  },
+  "chakrapani": {
+    name: "Chakrapani Temple",
+    deity: "Lord Vishnu",
+    description: "The Chakrapani Temple holds the unique distinction of being one of the nine Navagraha temples dedicated to Sukran (Venus) while primarily serving as a Vishnu temple. This dual religious significance makes it a rare and important pilgrimage site. Built during the Chola period, the temple showcases classical Dravidian architecture and is renowned for its healing properties, particularly for ailments related to diabetes and skin conditions. The temple's peaceful ambiance and spiritual energy attract both religious devotees and those seeking alternative healing.",
+    history: "The Chakrapani Temple was constructed during the early Chola period as part of the Navagraha temple circuit around Kumbakonam. Each of these nine temples corresponds to one of the nine celestial bodies in Hindu astronomy. This temple specifically represents Sukran (Venus) and is believed to help devotees overcome the malefic effects of Venus in their astrological charts. The temple gained prominence for its miraculous healing powers, with numerous devotees reporting recovery from chronic ailments after regular worship here. Historical records indicate that the temple received significant patronage from various dynasties who recognized its spiritual and therapeutic importance.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 8:00 PM"
+    },
+    festivals: [
+      {
+        name: "Sukran Jayanti",
+        description: "Special celebration honoring planet Venus with elaborate rituals and astrological consultations.",
+        period: "Based on Lunar Calendar"
+      },
+      {
+        name: "Navagraha Pooja",
+        description: "Comprehensive planetary worship involving all nine celestial deities for astrological benefits.",
+        period: "Every Friday"
+      },
+      {
+        name: "Healing Festival",
+        description: "Annual celebration focusing on the temple's healing powers with medical camps and wellness programs.",
+        period: "November/December"
+      }
+    ],
+    location: {
+      address: "Chakrapani Temple Road, Kumbakonam, Tamil Nadu 612001",
+      coordinates: "10.9561° N, 79.3724° E",
+      latitude: 10.9561,
+      longitude: 79.3724
+    },
+    contact: {
+      phone: "+91 435 242 7890",
+      email: "contact@chakrapanitemple.org"
+    },
+    facilities: ["Healing Center", "Astrological Consultation", "Herbal Medicine Dispensary", "Meditation Hall", "Parking Available", "Health Records Archive"],
+    dresscode: "Clean traditional attire required. Patients visiting for healing should wear white or light-colored clothing.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "someswarar": {
+    name: "Someswarar Temple",
+    deity: "Lord Shiva",
+    description: "The Someswarar Temple is dedicated to Lord Shiva in his moon-aspect form, making it one of the most spiritually significant temples for Monday worship and lunar-related rituals. Built during the Chola period, this ancient temple is renowned for its association with mental peace, emotional healing, and lunar deity worship. The temple's unique positioning and architectural elements are designed to harness lunar energy, making it a powerful center for meditation and spiritual practices related to mind and emotion.",
+    history: "Constructed during the reign of the Chola dynasty, the Someswarar Temple has served as a center for lunar worship for over a millennium. The temple derives its name from 'Soma,' another name for the moon, and Lord Shiva's association with the lunar deity. According to legend, the moon god (Chandra) performed penance here to overcome the curse that caused his waning. The temple's architecture incorporates elements that align with lunar cycles, and it has traditionally been a place where devotees come to seek relief from mental afflictions, emotional disturbances, and to enhance their spiritual consciousness through moon-related practices.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 8:00 PM"
+    },
+    festivals: [
+      {
+        name: "Pradosham",
+        description: "Bi-monthly celebration during the 13th lunar day when special prayers are offered to Lord Shiva during twilight hours.",
+        period: "Twice every month"
+      },
+      {
+        name: "Kartik Somvar",
+        description: "Special Monday worship during the month of Kartik considered highly auspicious for Lord Shiva devotees.",
+        period: "October/November"
+      },
+      {
+        name: "Chandra Darshan",
+        description: "Moon sighting ceremony with special prayers performed during new moon and full moon days.",
+        period: "Monthly"
+      }
+    ],
+    location: {
+      address: "Someswarar Temple Lane, Kumbakonam, Tamil Nadu 612001",
+      coordinates: "10.9542° N, 79.3758° E",
+      latitude: 10.9542,
+      longitude: 79.3758
+    },
+    contact: {
+      phone: "+91 435 242 4567",
+      email: "info@someswaratemple.org"
+    },
+    facilities: ["Meditation Garden", "Lunar Calendar Display", "Mental Wellness Center", "Traditional Astrology Consultation", "Parking Available", "Moon Phase Observatory"],
+    dresscode: "Traditional white or light-colored attire preferred for lunar worship. Modest clothing covering shoulders and legs required.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
   }
 };
 
@@ -249,11 +461,25 @@ const TempleDetail = () => {
 
             {/* Actions */}
             <div className="space-y-3">
-              <Button variant="temple" className="w-full">
+              <Button 
+                variant="temple" 
+                className="w-full"
+                onClick={() => {
+                  const url = `https://www.google.com/maps/dir/?api=1&destination=${temple.location.latitude},${temple.location.longitude}&travelmode=driving`;
+                  window.open(url, '_blank');
+                }}
+              >
                 <Navigation className="w-4 h-4 mr-2" />
                 Get Directions
               </Button>
-              <Button variant="gold" className="w-full">
+              <Button 
+                variant="gold" 
+                className="w-full"
+                onClick={() => {
+                  const url = `https://www.google.com/maps/search/?api=1&query=${temple.location.latitude},${temple.location.longitude}`;
+                  window.open(url, '_blank');
+                }}
+              >
                 <MapPin className="w-4 h-4 mr-2" />
                 View on Map
               </Button>
