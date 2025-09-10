@@ -1,8 +1,9 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Calendar } from "lucide-react";
+import { MapPin, Clock, Calendar, Eye } from "lucide-react";
 import { Link } from "react-router-dom";
+import TempleVR360Modal from "./TempleVR360Modal";
 
 interface TempleCardProps {
   id: string;
@@ -68,13 +69,24 @@ const TempleCard = ({ id, name, deity, description, timings, image, festivals }:
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0">
-        <Button variant="temple" size="sm" asChild className="w-full">
+      <CardFooter className="p-4 pt-0 flex-col sm:flex-row gap-2">
+        <Button variant="temple" size="sm" asChild className="flex-1">
           <Link to={`/temple/${id}`}>
             <MapPin className="w-4 h-4 mr-1" />
             View Details
           </Link>
         </Button>
+        
+        <TempleVR360Modal 
+          templeName={name} 
+          image360Url={image} 
+          deity={deity}
+        >
+          <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-temple-saffron text-temple-saffron hover:bg-temple-saffron hover:text-primary-foreground transition-temple">
+            <Eye className="w-4 h-4 mr-1" />
+            360° View
+          </Button>
+        </TempleVR360Modal>
       </CardFooter>
     </Card>
   );
