@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Calendar, Eye } from "lucide-react";
+import { MapPin, Clock, Calendar, Navigation } from "lucide-react";
 import { Link } from "react-router-dom";
 import TempleVR360Modal from "./TempleVR360Modal";
 
@@ -79,12 +79,13 @@ const TempleCard = ({ id, name, deity, description, timings, image, festivals }:
         
         <TempleVR360Modal 
           templeName={name} 
-          image360Url={image} 
           deity={deity}
+          latitude={10.9577} // Kumbakonam center - you can update with specific temple coordinates
+          longitude={79.3773}
         >
           <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-temple-saffron text-temple-saffron hover:bg-temple-saffron hover:text-primary-foreground transition-temple">
-            <Eye className="w-4 h-4 mr-1" />
-            360° View
+            <Navigation className="w-4 h-4 mr-1" />
+            Street View 360°
           </Button>
         </TempleVR360Modal>
       </CardFooter>
