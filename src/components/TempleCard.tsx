@@ -13,9 +13,10 @@ interface TempleCardProps {
   timings: string;
   image: string;
   festivals: string[];
+  coordinates: { latitude: number; longitude: number };
 }
 
-const TempleCard = ({ id, name, deity, description, timings, image, festivals }: TempleCardProps) => {
+const TempleCard = ({ id, name, deity, description, timings, image, festivals, coordinates }: TempleCardProps) => {
   return (
     <Card className="group hover:shadow-temple transition-temple transform hover:-translate-y-1 overflow-hidden bg-card">
       <CardHeader className="p-0">
@@ -80,8 +81,8 @@ const TempleCard = ({ id, name, deity, description, timings, image, festivals }:
         <TempleVR360Modal 
           templeName={name} 
           deity={deity}
-          latitude={10.9577} // Kumbakonam center - you can update with specific temple coordinates
-          longitude={79.3773}
+          latitude={coordinates.latitude}
+          longitude={coordinates.longitude}
         >
           <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-temple-saffron text-temple-saffron hover:bg-temple-saffron hover:text-primary-foreground transition-temple">
             <Navigation className="w-4 h-4 mr-1" />

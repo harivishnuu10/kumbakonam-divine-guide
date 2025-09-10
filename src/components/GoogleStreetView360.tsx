@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Navigation, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+import { useGoogleMapsAPI } from "@/hooks/useGoogleMapsAPI";
 
 interface GoogleStreetView360Props {
   latitude: number;
@@ -9,7 +10,6 @@ interface GoogleStreetView360Props {
   templeName: string;
   deity: string;
   height?: string;
-  apiKey?: string;
 }
 
 declare global {
@@ -23,9 +23,9 @@ const GoogleStreetView360 = ({
   longitude, 
   templeName, 
   deity,
-  height = "400px",
-  apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY 
+  height = "400px"
 }: GoogleStreetView360Props) => {
+  const { apiKey, isLoading: apiLoading, error: apiError } = useGoogleMapsAPI();
   const streetViewRef = useRef<HTMLDivElement>(null);
   const panoramaRef = useRef<any>(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -34,7 +34,7 @@ const GoogleStreetView360 = ({
   const [zoom, setZoom] = useState(1);
 
   useEffect(() => {
-    if (!apiKey) return;
+    if (!apiKey || apiLoading) return;
 
     // Load Google Maps API if not already loaded
     if (!window.google) {
@@ -47,7 +47,7 @@ const GoogleStreetView360 = ({
     } else {
       initializeStreetView();
     }
-  }, [latitude, longitude, apiKey]);
+  }, [latitude, longitude, apiKey, apiLoading]);
 
   const initializeStreetView = () => {
     if (!streetViewRef.current || !window.google) return;
@@ -126,6 +126,43 @@ const GoogleStreetView360 = ({
       zoom: 1
     });
   };
+
+  if (apiLoading) {
+    return (
+      <div 
+        className="bg-gradient-to-br from-temple-stone to-muted rounded-lg flex items-center justify-center border animate-pulse"
+        style={{ height }}
+      >
+        <div className="text-center">
+          <RefreshCw className="w-8 h-8 mx-auto text-temple-saffron animate-spin mb-2" />
+          <p className="text-sm text-muted-foreground">Loading API key...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (apiError || !apiKey) {
+    return (
+      <div 
+        className="bg-gradient-to-br from-temple-stone to-muted rounded-lg flex items-center justify-center border"
+        style={{ height }}
+      >
+        <div className="text-center p-6">
+          <Navigation className="w-12 h-12 mx-auto text-muted-foreground mb-3" />
+          <h3 className="font-semibold text-foreground mb-2">Street View Unavailable</h3>
+          <p className="text-sm text-muted-foreground mb-3">
+            {apiError || 'Google Maps API key required for 360° street view'}
+          </p>
+          <Badge className="bg-gradient-temple text-primary-foreground">
+            {deity} Temple
+          </Badge>
+          <div className="mt-3 text-xs text-muted-foreground">
+            <p>Please configure Google Maps API key in Supabase secrets</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!apiKey) {
     return (

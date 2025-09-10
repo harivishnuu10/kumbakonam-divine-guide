@@ -16,7 +16,8 @@ const featuredTemples = [
     description: "One of the most ancient temples in Kumbakonam, built by the Cholas. Famous for its magnificent architecture and spiritual significance.",
     timings: "6:00 AM - 12:30 PM, 4:00 PM - 9:00 PM",
     image: "/placeholder.svg",
-    festivals: ["Mahamaham", "Chithirai", "Arudra Darisanam"]
+    festivals: ["Mahamaham", "Chithirai", "Arudra Darisanam"],
+    coordinates: { latitude: 10.9601, longitude: 79.3788 }
   },
   {
     id: "sarangapani",
@@ -25,7 +26,8 @@ const featuredTemples = [
     description: "A magnificent Vaishnavite temple known for its towering gopuram and intricate carvings. One of the 108 Divya Desams.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
     image: "/placeholder.svg",
-    festivals: ["Brahmotsavam", "Vaikunta Ekadasi"]
+    festivals: ["Brahmotsavam", "Vaikunta Ekadasi"],
+    coordinates: { latitude: 10.9593, longitude: 79.3774 }
   },
   {
     id: "ramaswamy",
@@ -34,7 +36,8 @@ const featuredTemples = [
     description: "Dedicated to Lord Rama, this temple showcases exquisite Nayak period architecture with beautiful paintings and sculptures.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM", 
     image: "/placeholder.svg",
-    festivals: ["Rama Navami", "Hanuman Jayanti"]
+    festivals: ["Rama Navami", "Hanuman Jayanti"],
+    coordinates: { latitude: 10.9586, longitude: 79.3795 }
   }
 ];
 
