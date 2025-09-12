@@ -6,6 +6,7 @@ import { Search, MapPin, Clock, Star, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-temple.jpg";
 import TempleCard from "@/components/TempleCard";
+import TranslatedText from "@/components/TranslatedText";
 
 // Sample temple data for demonstration
 const featuredTemples = [
@@ -64,30 +65,29 @@ const Home = () => {
         <div className="relative z-10 container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl">
             <Badge className="mb-4 bg-gradient-temple text-primary-foreground">
-              🕉 Sacred Heritage of Tamil Nadu
+              🕉 <TranslatedText text="Sacred Heritage of Tamil Nadu" />
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Discover the Divine
+              <TranslatedText text="Discover the Divine" />
               <span className="block bg-gradient-temple bg-clip-text text-transparent">
-                Temples of Kumbakonam
+                <TranslatedText text="Temples of Kumbakonam" />
               </span>
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              Explore ancient temples, rich heritage, and spiritual wisdom in the temple town
-              of South India. Your AI-powered guide to sacred experiences.
+              <TranslatedText text="Explore ancient temples, rich heritage, and spiritual wisdom in the temple town of South India. Your AI-powered guide to sacred experiences." />
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Button variant="temple" size="lg" asChild>
                 <Link to="/temples">
                   <MapPin className="w-5 h-5 mr-2" />
-                  Explore Temples
+                  <TranslatedText text="Explore Temples" />
                 </Link>
               </Button>
               <Button variant="gold" size="lg" asChild>
                 <Link to="/chat">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Ask Temple Guide AI
+                  <TranslatedText text="Ask Temple Guide AI" />
                 </Link>
               </Button>
             </div>
@@ -117,7 +117,7 @@ const Home = () => {
                 <CardContent className="p-6">
                   <stat.icon className="w-12 h-12 mx-auto mb-4 text-temple-saffron" />
                   <h3 className="text-3xl font-bold text-foreground mb-2">{stat.value}</h3>
-                  <p className="text-muted-foreground">{stat.label}</p>
+                  <p className="text-muted-foreground"><TranslatedText text={stat.label} /></p>
                 </CardContent>
               </Card>
             ))}
@@ -130,11 +130,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Featured Sacred Sites
+              <TranslatedText text="Featured Sacred Sites" />
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Begin your spiritual journey with these magnificent temples, each with unique
-              architecture and divine significance.
+              <TranslatedText text="Begin your spiritual journey with these magnificent temples, each with unique architecture and divine significance." />
             </p>
           </div>
 

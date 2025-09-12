@@ -3,7 +3,7 @@ import { APIProvider, Map, Marker, InfoWindow } from '@vis.gl/react-google-maps'
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Star } from "lucide-react";
-
+import { useGoogleMapsAPI } from '@/hooks/useGoogleMapsAPI';
 interface MapLocation {
   id: string;
   name: string;
@@ -32,6 +32,9 @@ const GoogleMap = ({
 }: GoogleMapProps) => {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation | null>(null);
 
+  const { apiKey: keyFromHook, isLoading } = useGoogleMapsAPI();
+  const effectiveApiKey = apiKey || keyFromHook || import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+
   const handleMarkerClick = useCallback((location: MapLocation) => {
     setSelectedLocation(location);
   }, []);
@@ -49,8 +52,22 @@ const GoogleMap = ({
     ));
   };
 
+  // Loading state when fetching API key
+  if (isLoading && !effectiveApiKey) {
+    return (
+      <Card className="shadow-soft" style={{ height }}>
+        <CardContent className="p-8 h-full flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin w-8 h-8 border-2 border-temple-saffron border-t-transparent rounded-full mx-auto mb-4"></div>
+            <p className="text-muted-foreground">Loading map...</p>
+          </div>
+        </CardContent>
+      </Card>
+    );
+  }
+
   // Fallback map component if Google Maps API is not available
-  if (!apiKey) {
+  if (!effectiveApiKey) {
     return (
       <Card className="shadow-soft" style={{ height }}>
         <CardContent className="p-8 h-full flex flex-col items-center justify-center">
@@ -86,7 +103,7 @@ const GoogleMap = ({
 
   return (
     <Card className="shadow-soft overflow-hidden">
-      <APIProvider apiKey={apiKey}>
+      <APIProvider apiKey={effectiveApiKey}>
         <Map
           defaultCenter={center}
           defaultZoom={zoom}

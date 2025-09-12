@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Home, MapPin, MessageCircle, Hotel, Map } from "lucide-react";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/hooks/useLanguage";
+import TranslatedText from "./TranslatedText";
 
 const Navbar = () => {
   const location = useLocation();
@@ -25,7 +26,7 @@ const Navbar = () => {
               <span className="text-primary-foreground font-bold text-sm">🕉</span>
             </div>
             <span className="text-xl font-bold bg-gradient-temple bg-clip-text text-transparent">
-              Kumbakonam Temples
+              <TranslatedText text="Kumbakonam Temples" />
             </span>
           </Link>
 

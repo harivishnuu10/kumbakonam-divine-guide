@@ -33,6 +33,10 @@ export const useLanguageState = () => {
   useEffect(() => {
     localStorage.setItem('kumbakonam-guide-language', language);
     setTranslations(translationService.getUITranslations(language));
+    // Reflect current language on the <html> tag for accessibility and SEO
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = language;
+    }
   }, [language]);
 
   const t = (key: string): string => {

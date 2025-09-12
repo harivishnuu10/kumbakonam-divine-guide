@@ -15,6 +15,7 @@ import {
   Clock,
   Calendar
 } from "lucide-react";
+import TranslatedText from "@/components/TranslatedText";
 
 interface Message {
   id: string;
@@ -107,11 +108,10 @@ const Chat = () => {
             <Sparkles className="w-6 h-6 text-temple-saffron" />
           </div>
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            AI Temple Guide
+            <TranslatedText text="AI Temple Guide" />
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ask me anything about Kumbakonam temples, festivals, timings, rituals, and more.
-            I'm here to help make your spiritual journey meaningful!
+            <TranslatedText text="Ask me anything about Kumbakonam temples, festivals, timings, rituals, and more. I'm here to help make your spiritual journey meaningful!" />
           </p>
         </div>
 
@@ -122,7 +122,7 @@ const Chat = () => {
               <CardHeader className="bg-gradient-temple text-primary-foreground rounded-t-lg">
                 <CardTitle className="flex items-center">
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Chat with Temple Guide AI
+                  <TranslatedText text="Chat with Temple Guide AI" />
                 </CardTitle>
               </CardHeader>
               
@@ -149,7 +149,7 @@ const Chat = () => {
                               <User className="w-4 h-4 mt-0.5" />
                             )}
                             <div className="flex-1">
-                              <p className="text-sm">{message.content}</p>
+                              <TranslatedText text={message.content} as="p" className="text-sm" />
                               <p className="text-xs opacity-70 mt-1">
                                 {message.timestamp.toLocaleTimeString([], { 
                                   hour: '2-digit', 
@@ -208,7 +208,7 @@ const Chat = () => {
             {/* Suggested Questions */}
             <Card className="shadow-soft">
               <CardHeader>
-                <CardTitle className="text-lg text-foreground">Suggested Questions</CardTitle>
+                <CardTitle className="text-lg text-foreground"><TranslatedText text="Suggested Questions" /></CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
@@ -220,7 +220,7 @@ const Chat = () => {
                       className="w-full text-left h-auto p-3 hover:bg-secondary"
                       onClick={() => handleSendMessage(question)}
                     >
-                      <span className="text-xs">{question}</span>
+                      <TranslatedText text={question} as="span" className="text-xs" />
                     </Button>
                   ))}
                 </div>
@@ -230,14 +230,14 @@ const Chat = () => {
             {/* Quick Info */}
             <Card className="shadow-soft">
               <CardHeader>
-                <CardTitle className="text-lg text-foreground">Quick Info</CardTitle>
+                <CardTitle className="text-lg text-foreground"><TranslatedText text="Quick Info" /></CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-temple-saffron mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground text-sm">18+ Temples</p>
-                    <p className="text-xs text-muted-foreground">Ancient sacred sites</p>
+                    <p className="text-xs text-muted-foreground"><TranslatedText text="Ancient sacred sites" /></p>
                   </div>
                 </div>
 
@@ -245,15 +245,15 @@ const Chat = () => {
                   <Clock className="w-5 h-5 text-temple-gold mt-0.5" />
                   <div>
                     <p className="font-medium text-foreground text-sm">6 AM - 9 PM</p>
-                    <p className="text-xs text-muted-foreground">General timings</p>
+                    <p className="text-xs text-muted-foreground"><TranslatedText text="General timings" /></p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-3">
                   <Calendar className="w-5 h-5 text-temple-red mt-0.5" />
                   <div>
-                    <p className="font-medium text-foreground text-sm">Year-round</p>
-                    <p className="text-xs text-muted-foreground">Festivals & celebrations</p>
+                    <p className="font-medium text-foreground text-sm"><TranslatedText text="Year-round" /></p>
+                    <p className="text-xs text-muted-foreground"><TranslatedText text="Festivals & celebrations" /></p>
                   </div>
                 </div>
               </CardContent>

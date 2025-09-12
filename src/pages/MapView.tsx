@@ -7,6 +7,7 @@ import { Search, MapPin, Filter, Navigation } from "lucide-react";
 import GoogleMap from "@/components/GoogleMap";
 import { templeService, hotelService, Temple, Hotel } from "@/lib/supabase";
 import { useLanguage } from "@/hooks/useLanguage";
+import TranslatedText from "@/components/TranslatedText";
 
 interface MapLocation {
   id: string;
@@ -194,7 +195,7 @@ const MapView = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Interactive {t('map')}
+            <TranslatedText text="Interactive Map" />
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore temples and hotels in Kumbakonam with our interactive map. 
