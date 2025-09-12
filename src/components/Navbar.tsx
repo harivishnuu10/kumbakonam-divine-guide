@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 import { Home, MapPin, MessageCircle, Hotel, Map } from "lucide-react";
-import LanguageToggle from "./LanguageToggle";
+import LanguageSelector from "./LanguageSelector";
 import { useLanguage } from "@/hooks/useLanguage";
 import TranslatedText from "./TranslatedText";
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                 </Link>
               </Button>
             ))}
-            <LanguageToggle />
+            <LanguageSelector />
           </div>
         </div>
       </div>

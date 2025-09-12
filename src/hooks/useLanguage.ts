@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext, useContext } from 'react';
-import { translationService } from '@/lib/translation';
+import { translationService, type SupportedLanguage } from '@/lib/translation';
 
-type Language = 'en' | 'ta';
+type Language = SupportedLanguage;
 
 interface LanguageContextType {
   language: Language;
