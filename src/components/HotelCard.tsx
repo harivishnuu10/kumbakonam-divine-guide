@@ -24,7 +24,8 @@ const HotelCard = ({
   rating, 
   images, 
   amenities,
-  address
+  address,
+  phone
 }: HotelCardProps) => {
   const { language, t } = useLanguage();
   
@@ -100,7 +101,16 @@ const HotelCard = ({
             {t('viewDetails')}
           </Link>
         </Button>
-        <Button variant="gold" size="sm" className="flex-1">
+        <Button 
+          variant="gold" 
+          size="sm" 
+          className="flex-1"
+          onClick={() => {
+            if (phone) {
+              window.location.href = `tel:${phone}`;
+            }
+          }}
+        >
           <Phone className="w-4 h-4 mr-1" />
           {t('bookNow')}
         </Button>

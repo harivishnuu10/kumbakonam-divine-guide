@@ -285,17 +285,42 @@ const HotelDetail = () => {
 
             {/* Actions */}
             <div className="space-y-3">
-              <Button variant="temple" className="w-full" size="lg">
+              <Button 
+                variant="temple" 
+                className="w-full" 
+                size="lg"
+                onClick={() => {
+                  if (hotel.phone) {
+                    window.location.href = `tel:${hotel.phone}`;
+                  }
+                }}
+              >
                 <Phone className="w-5 h-5 mr-2" />
                 {t('bookNow')}
               </Button>
-              <Button variant="gold" className="w-full">
+              <Button 
+                variant="gold" 
+                className="w-full"
+                onClick={() => {
+                  window.open(
+                    `https://www.google.com/maps/dir/?api=1&destination=${hotel.latitude},${hotel.longitude}`,
+                    '_blank',
+                    'noopener,noreferrer'
+                  );
+                }}
+              >
                 <Navigation className="w-4 h-4 mr-2" />
                 {t('getDirections')}
               </Button>
-              <Button variant="outline" className="w-full">
-                <MapPin className="w-4 h-4 mr-2" />
-                View on Map
+              <Button 
+                variant="outline" 
+                className="w-full"
+                asChild
+              >
+                <Link to={`/map?hotel=${hotel.id}`}>
+                  <MapPin className="w-4 h-4 mr-2" />
+                  View on Map
+                </Link>
               </Button>
             </div>
           </div>
