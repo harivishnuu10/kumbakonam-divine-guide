@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import { 
@@ -13,9 +12,13 @@ import {
   Sparkles,
   MapPin,
   Clock,
-  Calendar
+  Calendar,
+  Loader2
 } from "lucide-react";
 import TranslatedText from "@/components/TranslatedText";
+import { useLanguage } from "@/hooks/useLanguage";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 interface Message {
   id: string;
@@ -34,6 +37,7 @@ const suggestedQuestions = [
 ];
 
 const Chat = () => {
+  const { language } = useLanguage();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
@@ -44,11 +48,17 @@ const Chat = () => {
   ]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const handleSendMessage = async (message: string) => {
-    if (!message.trim()) return;
+    if (!message.trim() || isLoading) return;
 
-    // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
       type: 'user',
@@ -60,40 +70,28 @@ const Chat = () => {
     setInputMessage('');
     setIsLoading(true);
 
-    // Simulate AI response (in real app, this would call your AI API)
-    setTimeout(() => {
+    try {
+      const { data, error } = await supabase.functions.invoke('chat', {
+        body: { message, language }
+      });
+
+      if (error) throw error;
+
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         type: 'bot',
-        content: getAIResponse(message),
+        content: data.response,
         timestamp: new Date()
       };
-
+      
       setMessages(prev => [...prev, botResponse]);
+    } catch (error) {
+      console.error('Chat error:', error);
+      toast.error('Failed to get response. Please try again.');
+      setMessages(prev => prev.filter(msg => msg.id !== userMessage.id));
+    } finally {
       setIsLoading(false);
-    }, 1500);
-  };
-
-  const getAIResponse = (question: string): string => {
-    const lowerQuestion = question.toLowerCase();
-    
-    if (lowerQuestion.includes('adi kumbeswarar') || lowerQuestion.includes('timing')) {
-      return "🕉️ Adi Kumbeswarar Temple is open from 6:00 AM to 12:30 PM and 4:00 PM to 9:00 PM daily. This ancient Shiva temple is one of the most sacred sites in Kumbakonam. The morning hours are especially peaceful for prayers and darshan.";
     }
-    
-    if (lowerQuestion.includes('mahamaham')) {
-      return "🎊 Mahamaham is the grand festival held once every 12 years in Kumbakonam! During this time, millions of devotees gather at the Mahamaham tank for a holy dip. The next Mahamaham festival will be a truly spectacular spiritual experience. The entire town transforms into a vibrant celebration of faith.";
-    }
-    
-    if (lowerQuestion.includes('vishnu') || lowerQuestion.includes('sarangapani')) {
-      return "🪷 For Lord Vishnu worship, visit Sarangapani Temple - one of the 108 Divya Desams! It's known for its magnificent 11-tier gopuram. Chakrapani Temple is also dedicated to Vishnu and is part of the Navagraha temple circuit. Both temples have beautiful architecture and rich spiritual significance.";
-    }
-    
-    if (lowerQuestion.includes('dress') || lowerQuestion.includes('code')) {
-      return "👘 Temple dress code: Traditional attire is preferred and respectful. Men can wear dhoti with shirt or clean pants with shirt. Women can wear saree, salwar kameez, or long skirts with modest tops. Avoid shorts, sleeveless tops, and leather items. Many temples provide free dhoti for men if needed.";
-    }
-    
-    return "🙏 Thank you for your question! As your temple guide, I'd be happy to help with more specific information about temples, festivals, timings, rituals, or directions. Could you please provide more details about what you'd like to know?";
   };
 
   return (
@@ -166,12 +164,7 @@ const Chat = () => {
                       <div className="flex justify-start">
                         <div className="bg-secondary rounded-lg p-3">
                           <div className="flex items-center space-x-2">
-                            <Bot className="w-4 h-4 text-temple-saffron" />
-                            <div className="flex space-x-1">
-                              <div className="w-2 h-2 bg-temple-saffron rounded-full animate-bounce" />
-                              <div className="w-2 h-2 bg-temple-saffron rounded-full animate-bounce delay-100" />
-                              <div className="w-2 h-2 bg-temple-saffron rounded-full animate-bounce delay-200" />
-                            </div>
+                            <Loader2 className="w-4 h-4 text-temple-saffron animate-spin" />
                           </div>
                         </div>
                       </div>
