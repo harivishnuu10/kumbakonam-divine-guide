@@ -135,6 +135,9 @@ export class TranslationService {
         sendMessage: 'Send Message',
         typeMessage: 'Type your message...',
         welcomeToChat: 'Welcome to Kumbakonam Temple Guide! Ask me anything about temples, festivals, or travel tips.',
+        itineraries: 'Itineraries',
+        localGuide: 'Local Guide',
+        transportation: 'Transportation',
       },
       ta: {
         home: 'முகப்பு',

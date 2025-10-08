@@ -13,6 +13,8 @@ const Navbar = () => {
     { path: "/", label: t("home"), icon: Home },
     { path: "/temples", label: t("temples"), icon: MapPin },
     { path: "/hotels", label: t("hotels"), icon: Hotel },
+    { path: "/itineraries", label: "Itineraries", icon: MapPin },
+    { path: "/local-guide", label: "Local Guide", icon: Map },
     { path: "/map", label: t("map"), icon: Map },
     { path: "/chat", label: t("chat"), icon: MessageCircle },
   ];
