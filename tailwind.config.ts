@@ -73,12 +73,17 @@ export default {
 			backgroundImage: {
 				'gradient-temple': 'var(--gradient-temple)',
 				'gradient-sunset': 'var(--gradient-sunset)',
-				'gradient-gold': 'var(--gradient-gold)'
+				'gradient-gold': 'var(--gradient-gold)',
+				'gradient-radial': 'var(--gradient-radial)',
+				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-mesh': 'var(--gradient-mesh)'
 			},
 			boxShadow: {
 				'temple': 'var(--shadow-temple)',
 				'gold': 'var(--shadow-gold)',
-				'soft': 'var(--shadow-soft)'
+				'soft': 'var(--shadow-soft)',
+				'glow-intense': 'var(--shadow-glow-intense)',
+				'3d': 'var(--shadow-3d)'
 			},
 			transitionTimingFunction: {
 				'temple': 'var(--transition-temple)'
@@ -128,6 +133,29 @@ export default {
 				'scale-in': {
 					from: { opacity: '0', transform: 'scale(0.9)' },
 					to: { opacity: '1', transform: 'scale(1)' }
+				},
+				'rotate-3d': {
+					from: { transform: 'perspective(1000px) rotateY(0deg) rotateX(0deg)' },
+					to: { transform: 'perspective(1000px) rotateY(360deg) rotateX(360deg)' }
+				},
+				'gradient-shift': {
+					'0%, 100%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' }
+				},
+				'bounce-glow': {
+					'0%, 100%': { 
+						transform: 'translateY(0)',
+						boxShadow: '0 0 20px hsl(var(--primary) / 0.3)'
+					},
+					'50%': { 
+						transform: 'translateY(-20px)',
+						boxShadow: '0 20px 40px hsl(var(--primary) / 0.6)'
+					}
+				},
+				'float-alt': {
+					'0%, 100%': { transform: 'translateY(0px) translateX(0px)' },
+					'25%': { transform: 'translateY(-15px) translateX(10px)' },
+					'75%': { transform: 'translateY(-5px) translateX(-10px)' }
 				}
 			},
 			animation: {
@@ -138,7 +166,11 @@ export default {
 				'shimmer': 'shimmer 2s infinite',
 				'reveal': 'reveal 0.6s ease-out',
 				'slide-up': 'slide-up 0.5s ease-out',
-				'scale-in': 'scale-in 0.4s ease-out'
+				'scale-in': 'scale-in 0.4s ease-out',
+				'rotate-3d': 'rotate-3d 20s linear infinite',
+				'gradient-shift': 'gradient-shift 5s ease infinite',
+				'bounce-glow': 'bounce-glow 3s ease-in-out infinite',
+				'float-alt': 'float-alt 4s ease-in-out infinite'
 			}
 		}
 	},
