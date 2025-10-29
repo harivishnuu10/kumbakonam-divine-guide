@@ -139,11 +139,11 @@ const Hotels = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background py-8">
+    <div className="min-h-screen bg-background py-8 animate-slide-up">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+        <div className="text-center mb-8 animate-scale-in">
+          <h1 className="text-4xl font-bold text-gradient mb-4 animate-float">
             {t('hotels')} in Kumbakonam
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -153,7 +153,7 @@ const Hotels = () => {
         </div>
 
         {/* Search and Filters */}
-        <div className="bg-card rounded-lg shadow-soft p-6 mb-8">
+        <div className="glass rounded-lg shadow-temple p-6 mb-8 border border-primary/20 animate-reveal">
           <div className="flex flex-col lg:flex-row gap-4">
             {/* Search Bar */}
             <div className="flex-1 relative">

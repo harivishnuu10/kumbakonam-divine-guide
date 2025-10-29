@@ -267,6 +267,160 @@ const templeDetails: Record<string, any> = {
     dresscode: "Traditional white or light-colored attire preferred for lunar worship. Modest clothing covering shoulders and legs required.",
     image: "/src/assets/hero-temple.jpg",
     gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "kasi-viswanathar": {
+    name: "Kasi Viswanathar Temple",
+    deity: "Lord Shiva",
+    description: "Known as the 'Kashi of the South,' the Kasi Viswanathar Temple is believed to grant devotees the same spiritual merits as visiting the holy city of Varanasi. This ancient temple showcases spectacular Nayak period architecture with intricate sculptures, ornate pillars, and beautifully carved gopurams.",
+    history: "According to legend, sage Vyaghrapada performed penance here and Lord Shiva blessed him, establishing this as an equally sacred site to Kashi (Varanasi). The temple was renovated during the Nayak period, adding the magnificent architectural elements visible today. It's one of the few temples outside Varanasi where devotees believe they can attain moksha (liberation).",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 9:00 PM"
+    },
+    festivals: [
+      { name: "Karthigai Deepam", description: "Festival of lights where thousands of oil lamps illuminate the temple complex.", period: "November/December" },
+      { name: "Annabhishekam", description: "Special ritual where the deity is adorned with cooked rice offerings.", period: "Monthly" },
+      { name: "Shivaratri", description: "Grand celebration with night-long worship and special abhishekams.", period: "February/March" },
+      { name: "Aani Thirumanjana Utsavam", description: "Sacred bathing ceremony of the deity during the Tamil month of Aani.", period: "June/July" }
+    ],
+    location: { address: "Kasi Viswanathar Temple Street, Kumbakonam, Tamil Nadu 612001", coordinates: "10.9625° N, 79.3810° E", latitude: 10.9625, longitude: 79.3810 },
+    contact: { phone: "+91 435 242 8900", email: "info@kasiviswanathar.org" },
+    facilities: ["Ample Parking", "Wheelchair Access", "Pilgrimage Facilities", "Sacred Tank", "Bookstore", "Cultural Programs"],
+    dresscode: "Traditional Indian attire mandatory. Pilgrims should maintain dress code similar to Varanasi temples.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "uppiliappan": {
+    name: "Oppiliappan Temple",
+    deity: "Lord Vishnu",
+    description: "The Oppiliappan Temple holds a unique distinction as the only temple in India where prasadam is prepared without salt. This sacred Divya Desam temple is dedicated to Lord Vishnu and is renowned for its divine love story between the deity and Goddess Bhumi Devi.",
+    history: "According to legend, Goddess Bhumi Devi (Earth goddess) performed penance here to marry Lord Vishnu. When her aged father worried about her marriage to a younger-looking deity, Lord Vishnu appeared as an elderly sage. Bhumi Devi, having sensitive teeth, requested no salt in temple offerings, a tradition maintained to this day. The temple was patronized by Chola and later dynasties.",
+    timings: {
+      morning: "6:30 AM - 12:00 PM",
+      evening: "4:00 PM - 8:00 PM"
+    },
+    festivals: [
+      { name: "Panguni Uthiram", description: "Celebration of divine marriage of Lord and Goddess with grand processions.", period: "March/April" },
+      { name: "Vaikunta Ekadasi", description: "Opening of the sacred Vaikunta Dwara with special rituals.", period: "December/January" },
+      { name: "Pavitrotsavam", description: "Purification festival with sacred thread ceremony for the deity.", period: "July/August" },
+      { name: "Thirukalyanam", description: "Annual celebration of the celestial wedding.", period: "April/May" }
+    ],
+    location: { address: "Oppiliappan Koil, Near Kumbakonam, Tamil Nadu 612309", coordinates: "10.9890° N, 79.3520° E", latitude: 10.9890, longitude: 79.3520 },
+    contact: { phone: "+91 435 245 2001", email: "contact@oppiliappantemple.org" },
+    facilities: ["Temple Guesthouse", "Salt-Free Prasadam Counter", "Wedding Hall", "Parking Available", "Ritual Consulting"],
+    dresscode: "Traditional conservative attire required. Remove leather items before entry.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "airavatesvara": {
+    name: "Airavateswara Temple",
+    deity: "Lord Shiva",
+    description: "A UNESCO World Heritage Site, the Airavateswara Temple is a masterpiece of Chola architecture built by Raja Raja Chola II in the 12th century. Famous for its intricate stone chariot, musical pillars, and sculptures that rival the grandeur of Thanjavur's Brihadeeshwarar Temple.",
+    history: "Built in 1146 CE by Raja Raja Chola II at Darasuram near Kumbakonam, this temple exemplifies the architectural brilliance of the Later Chola period. The name derives from Airavata, the white elephant of Indra, who is believed to have worshipped Shiva here. The temple's musical pillars produce different notes when struck, showcasing ancient India's advanced understanding of acoustics and architecture.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "3:00 PM - 6:00 PM"
+    },
+    festivals: [
+      { name: "Mahamaham", description: "Once in 12 years grand celebration with millions of pilgrims.", period: "February/March (12-year cycle)" },
+      { name: "Arudra Darisanam", description: "Celebration of Lord Shiva's cosmic dance.", period: "December/January" },
+      { name: "Thai Poosam", description: "Special prayers and processions during this auspicious day.", period: "January/February" },
+      { name: "Shivaratri", description: "Night vigil with continuous prayers and cultural programs.", period: "February/March" }
+    ],
+    location: { address: "Darasuram, Near Kumbakonam, Tamil Nadu 612702", coordinates: "10.9530° N, 79.3590° E", latitude: 10.9530, longitude: 79.3590 },
+    contact: { phone: "+91 435 248 5100", email: "info@airavateswaratemple.org" },
+    facilities: ["UNESCO Site Information Center", "Archaeological Museum", "Musical Pillars Demonstration", "Guided Heritage Tours", "Ample Parking", "Refreshment Area"],
+    dresscode: "Modest traditional attire required for this heritage site. Photography allowed in designated areas.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "thirunageswaram": {
+    name: "Thirunageswaram Temple",
+    deity: "Lord Shiva",
+    description: "One of the nine sacred Navagraha temples dedicated to Rahu, this unique temple features an underground sanctum where a mysterious phenomenon occurs during milk abhishekam - the milk poured on the Shiva Linga changes to different colors, attracting scientists and devotees alike.",
+    history: "This ancient temple is part of the Navagraha temple circuit and specifically represents Rahu, the ascending lunar node. According to legend, serpent deities performed penance here, and Lord Shiva blessed the site. The temple's underground sanctum is believed to be where cosmic energies converge. Devotees visit to seek relief from serpent-related afflictions and Rahu dosha in their horoscopes.",
+    timings: {
+      morning: "6:00 AM - 1:00 PM",
+      evening: "4:00 PM - 8:30 PM"
+    },
+    festivals: [
+      { name: "Rahu Kala Pooja", description: "Special worship during Rahu Kalam considered highly powerful for removing obstacles.", period: "Daily" },
+      { name: "Thai Amavasai", description: "New moon day in Thai month with special rituals for ancestors.", period: "January/February" },
+      { name: "Aadi Pooram", description: "Festival dedicated to Goddess Parvati with grand celebrations.", period: "July/August" },
+      { name: "Panguni Uthiram", description: "Celestial wedding celebration with traditional ceremonies.", period: "March/April" }
+    ],
+    location: { address: "Thirunageswaram Village, Kumbakonam Taluk, Tamil Nadu 612204", coordinates: "10.9450° N, 79.4010° E", latitude: 10.9450, longitude: 79.4010 },
+    contact: { phone: "+91 435 247 6543", email: "info@thirunageswaramtemple.org" },
+    facilities: ["Rahu Worship Area", "Naga Dosha Remedies", "Astrological Consultation", "Abhishekam Services", "Prasadam Counter", "Parking"],
+    dresscode: "Traditional attire required. Special dress code for performing Rahu remedial poojas.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "swamimalai": {
+    name: "Swamimalai Murugan Temple",
+    deity: "Lord Murugan",
+    description: "One of the six sacred abodes (Arupadai Veedu) of Lord Murugan, this hilltop temple is accessed via 60 steps representing the 60-year Tamil calendar cycle. Here, young Murugan famously taught the meaning of the sacred 'Pranava Mantra' (Om) to his father Lord Shiva.",
+    history: "Swamimalai literally means 'Hill of the Lord.' The temple's origins date back over 1,400 years. It's renowned for the unique legend where Lord Murugan, in his child form, explained the profound meaning of 'Om' to Lord Shiva, reversing the traditional guru-disciple relationship. The village is also famous for traditional bronze idol making using the ancient lost-wax casting technique.",
+    timings: {
+      morning: "5:30 AM - 12:30 PM",
+      evening: "4:00 PM - 9:00 PM"
+    },
+    festivals: [
+      { name: "Skanda Sashti", description: "Six-day festival celebrating Murugan's victory over demon Surapadman.", period: "October/November" },
+      { name: "Vaikasi Visakam", description: "Birth celebration of Lord Murugan with elaborate rituals.", period: "May/June" },
+      { name: "Thai Poosam", description: "Grand chariot procession and kavadi attam performances.", period: "January/February" },
+      { name: "Panguni Uthiram", description: "Divine wedding celebration of Murugan and Devasena.", period: "March/April" }
+    ],
+    location: { address: "Swamimalai, Kumbakonam Taluk, Tamil Nadu 612302", coordinates: "10.9880° N, 79.3350° E", latitude: 10.9880, longitude: 79.3350 },
+    contact: { phone: "+91 435 244 2200", email: "contact@swamimalai.org" },
+    facilities: ["Bronze Sculpture Gallery", "Temple Museum", "Pilgrimage Rest House", "Traditional Prasadam", "60-Step Sacred Path", "Cultural Center"],
+    dresscode: "Traditional dress preferred. Devotees should climb the 60 steps barefoot as a mark of respect.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "mahalingeswarar": {
+    name: "Mahalingeswarar Temple",
+    deity: "Lord Shiva",
+    description: "This ancient temple features one of the largest Shiva Lingas in the Kumbakonam region, hence the name 'Maha' (great) Lingeswarar. Known for its massive stone pillars, expansive corridors, and the sacred tank that forms part of the Mahamaham pilgrimage circuit.",
+    history: "The Mahalingeswarar Temple has been a significant spiritual center for over a millennium. Built during the Chola period and expanded by subsequent dynasties, the temple is renowned for its architectural grandeur. The temple tank is one of the 16 sacred water bodies that receive cosmic waters during the Mahamaham festival, making it an important pilgrimage site.",
+    timings: {
+      morning: "6:00 AM - 12:30 PM",
+      evening: "4:00 PM - 8:30 PM"
+    },
+    festivals: [
+      { name: "Mahamaham", description: "Once in 12 years mega festival with millions of devotees bathing in sacred tank.", period: "February/March (12-year cycle)" },
+      { name: "Panguni Uthiram", description: "Grand procession and special rituals celebrating divine union.", period: "March/April" },
+      { name: "Arudra Darisanam", description: "Celebration of Lord Shiva's cosmic dance form.", period: "December/January" },
+      { name: "Vinayaka Chaturthi", description: "Ganesha festival with special prayers and cultural programs.", period: "August/September" }
+    ],
+    location: { address: "Mahalingeswarar Temple Street, Kumbakonam, Tamil Nadu 612001", coordinates: "10.9605° N, 79.3725° E", latitude: 10.9605, longitude: 79.3725 },
+    contact: { phone: "+91 435 242 5050", email: "info@mahalingeswarar.org" },
+    facilities: ["Sacred Temple Tank", "Mahamaham Bathing Ghats", "Pilgrimage Facilities", "Ritual Consulting", "Large Parking Area", "Prasadam Center"],
+    dresscode: "Traditional Indian attire required. Special dress code during Mahamaham festival.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
+  },
+  "kalahasteeswarar": {
+    name: "Kalahasteeswarar Temple",
+    deity: "Lord Shiva",
+    description: "Famous as 'Dakshina Kailasam' (Southern Kailash), this temple specializes in Rahu-Ketu worship and is known for performing powerful remedial poojas to nullify astrological doshas related to serpent worship and planetary afflictions. The temple attracts devotees seeking relief from Kala Sarpa Dosha.",
+    history: "The temple's history is intertwined with serpent worship traditions of South India. According to mythology, this is where serpent deities and celestial beings worshipped Lord Shiva. The temple has been a center for performing special Rahu-Ketu poojas for centuries, with elaborate rituals designed by ancient sages to counteract malefic planetary influences.",
+    timings: {
+      morning: "6:00 AM - 12:00 PM",
+      evening: "4:00 PM - 8:00 PM"
+    },
+    festivals: [
+      { name: "Rahu Ketu Pooja", description: "Powerful remedial rituals for planetary doshas performed by expert priests.", period: "Specific auspicious days" },
+      { name: "Mahamaham", description: "Participation in the sacred 12-year cycle festival.", period: "February/March (12-year cycle)" },
+      { name: "Arudra Darisanam", description: "Special worship of Lord Shiva's Nataraja form.", period: "December/January" },
+      { name: "Shivaratri", description: "Night-long vigil with special abhishekams and prayers.", period: "February/March" }
+    ],
+    location: { address: "Kalahasteeswarar Temple Road, Kumbakonam, Tamil Nadu 612001", coordinates: "10.9555° N, 79.3770° E", latitude: 10.9555, longitude: 79.3770 },
+    contact: { phone: "+91 435 242 7878", email: "info@kalahasteeswarar.org" },
+    facilities: ["Rahu-Ketu Remedial Pooja Services", "Astrological Consultation", "Naga Dosha Remedies", "Special Prayer Hall", "Parking Available", "Priest Booking"],
+    dresscode: "Traditional attire mandatory for special poojas. Specific dress code for remedial rituals.",
+    image: "/src/assets/hero-temple.jpg",
+    gallery: ["/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg", "/src/assets/hero-temple.jpg"]
   }
 };
 

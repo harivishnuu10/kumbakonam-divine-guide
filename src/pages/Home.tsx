@@ -53,38 +53,38 @@ const Home = () => {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 parallax">
           <img
             src={heroImage}
             alt="Kumbakonam Temples"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover animate-scale-in"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 py-24 md:py-32">
+        <div className="relative z-10 container mx-auto px-4 py-24 md:py-32 animate-slide-up">
           <div className="max-w-3xl">
-            <Badge className="mb-4 bg-gradient-temple text-primary-foreground">
+            <Badge className="mb-4 bg-gradient-temple text-primary-foreground shadow-temple animate-pulse-glow">
               🕉 <TranslatedText text="Sacred Heritage of Tamil Nadu" />
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight animate-reveal">
               <TranslatedText text="Discover the Divine" />
-              <span className="block bg-gradient-temple bg-clip-text text-transparent">
+              <span className="block text-gradient animate-shimmer">
                 <TranslatedText text="Temples of Kumbakonam" />
               </span>
             </h1>
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed animate-reveal" style={{ animationDelay: '0.2s' }}>
               <TranslatedText text="Explore ancient temples, rich heritage, and spiritual wisdom in the temple town of South India. Your AI-powered guide to sacred experiences." />
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <Button variant="temple" size="lg" asChild>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-reveal" style={{ animationDelay: '0.4s' }}>
+              <Button variant="temple" size="lg" asChild className="hover-3d">
                 <Link to="/temples">
                   <MapPin className="w-5 h-5 mr-2" />
                   <TranslatedText text="Explore Temples" />
                 </Link>
               </Button>
-              <Button variant="gold" size="lg" asChild>
+              <Button variant="gold" size="lg" asChild className="hover-3d">
                 <Link to="/chat">
                   <MessageCircle className="w-5 h-5 mr-2" />
                   <TranslatedText text="Ask Temple Guide AI" />
@@ -93,13 +93,13 @@ const Home = () => {
             </div>
 
             {/* Quick Search */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+            <div className="glass rounded-lg p-4 border border-white/20 shadow-temple animate-reveal" style={{ animationDelay: '0.6s' }}>
               <div className="flex gap-2">
                 <Input
                   placeholder="Search temples, deities, or festivals..."
-                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70"
+                  className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 transition-all"
                 />
-                <Button variant="temple">
+                <Button variant="temple" className="hover:scale-110 transition-transform">
                   <Search className="w-4 h-4" />
                 </Button>
               </div>
@@ -113,10 +113,10 @@ const Home = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {stats.map((stat, index) => (
-              <Card key={index} className="text-center bg-card/50 backdrop-blur-sm shadow-soft hover:shadow-gold transition-temple">
+              <Card key={index} className="text-center glass shadow-temple hover:shadow-gold transition-all card-3d hover-3d animate-scale-in" style={{ animationDelay: `${index * 0.2}s` }}>
                 <CardContent className="p-6">
-                  <stat.icon className="w-12 h-12 mx-auto mb-4 text-temple-saffron" />
-                  <h3 className="text-3xl font-bold text-foreground mb-2">{stat.value}</h3>
+                  <stat.icon className="w-12 h-12 mx-auto mb-4 text-temple-saffron animate-float" />
+                  <h3 className="text-3xl font-bold text-gradient mb-2">{stat.value}</h3>
                   <p className="text-muted-foreground"><TranslatedText text={stat.label} /></p>
                 </CardContent>
               </Card>
@@ -128,8 +128,8 @@ const Home = () => {
       {/* Featured Temples */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center mb-12 animate-reveal">
+            <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4 animate-float">
               <TranslatedText text="Featured Sacred Sites" />
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -138,13 +138,15 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {featuredTemples.map((temple) => (
-              <TempleCard key={temple.id} {...temple} />
+            {featuredTemples.map((temple, index) => (
+              <div key={temple.id} className="animate-reveal" style={{ animationDelay: `${index * 0.15}s` }}>
+                <TempleCard {...temple} />
+              </div>
             ))}
           </div>
 
-          <div className="text-center">
-            <Button variant="temple" size="lg" asChild>
+          <div className="text-center animate-reveal">
+            <Button variant="temple" size="lg" asChild className="hover-3d shadow-temple">
               <Link to="/temples">
                 View All Temples
                 <MapPin className="w-5 h-5 ml-2" />
