@@ -24,7 +24,7 @@ const sampleHotels: Hotel[] = [
     price_range: "₹3,000 - ₹5,000",
     rating: 4,
     amenities: ["wifi", "parking", "restaurant", "ac", "room-service"],
-    images: ["/placeholder.svg", "/placeholder.svg"],
+    images: ["/src/assets/hotel-grand-kumbakonam.jpg"],
     room_types: [
       {
         type: "Deluxe Room",
@@ -50,7 +50,7 @@ const sampleHotels: Hotel[] = [
     price_range: "₹1,500 - ₹2,500",
     rating: 3,
     amenities: ["wifi", "parking", "restaurant"],
-    images: ["/placeholder.svg"],
+    images: ["/src/assets/temple-view-inn.jpg"],
     room_types: [
       {
         type: "Standard Room",
@@ -77,7 +77,7 @@ const sampleHotels: Hotel[] = [
     price_range: "₹5,000 - ₹8,000",
     rating: 5,
     amenities: ["wifi", "parking", "restaurant", "spa", "pool", "gym"],
-    images: ["/placeholder.svg", "/placeholder.svg", "/placeholder.svg"],
+    images: ["/src/assets/heritage-palace.jpg"],
     room_types: [
       {
         type: "Heritage Suite",

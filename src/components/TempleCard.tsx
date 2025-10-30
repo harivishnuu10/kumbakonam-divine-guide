@@ -1,9 +1,8 @@
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Calendar, Navigation, Youtube as YoutubeIcon } from "lucide-react";
+import { MapPin, Clock, Calendar, Youtube as YoutubeIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import TempleVR360Modal from "./TempleVR360Modal";
 import TranslatedText from "./TranslatedText";
 import { useLanguage } from "@/hooks/useLanguage";
 
@@ -79,31 +78,19 @@ const TempleCard = ({ id, name, deity, description, timings, image, festivals, c
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 flex-col sm:flex-row gap-2">
+      <CardFooter className="p-4 pt-0 flex gap-2">
         <Button variant="temple" size="sm" asChild className="flex-1 hover:scale-105 transition-transform">
           <Link to={`/temple/${id}`}>
             <MapPin className="w-4 h-4 mr-1" />
             {t('viewDetails')}
           </Link>
         </Button>
-        
-        <TempleVR360Modal 
-          templeName={name} 
-          deity={deity}
-          latitude={coordinates.latitude}
-          longitude={coordinates.longitude}
-        >
-          <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-temple-saffron text-temple-saffron hover:bg-temple-saffron hover:text-primary-foreground transition-all hover:scale-105">
-            <Navigation className="w-4 h-4 mr-1" />
-            Street View 360°
-          </Button>
-        </TempleVR360Modal>
 
         <Button
           variant="gold"
           size="sm"
           onClick={openYouTube}
-          className="flex-1 sm:flex-initial hover:scale-105 transition-transform"
+          className="flex-1 hover:scale-105 transition-transform"
         >
           <YoutubeIcon className="w-4 h-4 mr-1" />
           Watch on YouTube

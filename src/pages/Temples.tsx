@@ -53,7 +53,7 @@ const templeData = [
     deity: "Lord Vishnu",
     description: "Part of the sacred Navagraha temple circuit, this unique shrine combines Vishnu worship with Venus (Sukran) planetary significance. Renowned for its healing properties, especially for diabetes and skin conditions.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/chakrapani.jpg",
     festivals: ["Sukran Jayanti", "Navagraha Pooja", "Healing Festival"],
     coordinates: { latitude: 10.9578, longitude: 79.3756 }
   },
@@ -63,7 +63,7 @@ const templeData = [
     deity: "Lord Shiva",
     description: "Dedicated to Lord Shiva's lunar aspect, this ancient temple specializes in Monday worship and lunar deity rituals. Architectural elements align with lunar cycles for enhanced spiritual energy.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/someswarar.jpg",
     festivals: ["Pradosham", "Kartik Somvar", "Chandra Darshan"],
     coordinates: { latitude: 10.9565, longitude: 79.3743 }
   },
@@ -73,7 +73,7 @@ const templeData = [
     deity: "Lord Shiva",
     description: "Known as the 'Kashi of the South,' this ancient temple is believed to grant the same blessings as visiting Varanasi. Features stunning architecture and intricate sculptures from the Nayak period.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 9:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/kasi-viswanathar.jpg",
     festivals: ["Karthigai Deepam", "Annabhishekam", "Shivaratri", "Aani Thirumanjana Utsavam"],
     coordinates: { latitude: 10.9625, longitude: 79.3810 }
   },
@@ -83,7 +83,7 @@ const templeData = [
     deity: "Lord Vishnu",
     description: "One of the 108 Divya Desams, this temple is famous for salt-free prasadam offerings. Legend says Goddess Bhumi Devi requested no salt in offerings, making this temple unique across India.",
     timings: "6:30 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/oppiliappan.jpg",
     festivals: ["Panguni Uthiram", "Vaikunta Ekadasi", "Pavitrotsavam", "Thirukalyanam"],
     coordinates: { latitude: 10.9890, longitude: 79.3520 }
   },
@@ -93,7 +93,7 @@ const templeData = [
     deity: "Lord Shiva",
     description: "A UNESCO World Heritage Site built by Raja Raja Chola II in the 12th century. Famous for its musical pillars, intricate stone chariot, and exceptional Chola architecture rivaling Tanjore's Brihadeeshwarar.",
     timings: "6:00 AM - 12:00 PM, 3:00 PM - 6:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/airavateswara.jpg",
     festivals: ["Mahamaham", "Arudra Darisanam", "Thai Poosam", "Shivaratri"],
     coordinates: { latitude: 10.9530, longitude: 79.3590 }
   },
@@ -103,7 +103,7 @@ const templeData = [
     deity: "Lord Shiva",
     description: "One of the nine Navagraha temples dedicated to Rahu. Unique for its underground sanctum where milk abhishekam mysteriously changes color, attracting devotees seeking relief from serpent afflictions.",
     timings: "6:00 AM - 1:00 PM, 4:00 PM - 8:30 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/thirunageswaram.jpg",
     festivals: ["Rahu Kala Pooja", "Thai Amavasai", "Aadi Pooram", "Panguni Uthiram"],
     coordinates: { latitude: 10.9450, longitude: 79.4010 }
   },
@@ -113,7 +113,7 @@ const templeData = [
     deity: "Lord Murugan",
     description: "One of the six abodes of Lord Murugan (Arupadai Veedu), perched atop 60 steps representing 60 Tamil years. Here, young Murugan taught the meaning of 'Om' to his father Lord Shiva.",
     timings: "5:30 AM - 12:30 PM, 4:00 PM - 9:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/swamimalai.jpg",
     festivals: ["Skanda Sashti", "Vaikasi Visakam", "Thai Poosam", "Panguni Uthiram"],
     coordinates: { latitude: 10.9880, longitude: 79.3350 }
   },
@@ -123,7 +123,7 @@ const templeData = [
     deity: "Lord Shiva",
     description: "An ancient temple featuring one of the largest Shiva Lingas in the region. Known for its massive stone pillars, expansive corridors, and the sacred tank that's part of the Mahamaham circuit.",
     timings: "6:00 AM - 12:30 PM, 4:00 PM - 8:30 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/mahalingeswarar.jpg",
     festivals: ["Mahamaham", "Panguni Uthiram", "Arudra Darisanam", "Vinayaka Chaturthi"],
     coordinates: { latitude: 10.9605, longitude: 79.3725 }
   },
@@ -133,7 +133,7 @@ const templeData = [
     deity: "Lord Shiva",
     description: "Famous for Rahu-Ketu worship and known as the 'Dakshina Kailasam.' Devotees come here to perform special poojas for nullifying astrological doshas related to serpent worship and planetary afflictions.",
     timings: "6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM",
-    image: "/src/assets/hero-temple.jpg",
+    image: "/src/assets/kalahasteeswarar.jpg",
     festivals: ["Rahu Ketu Pooja", "Mahamaham", "Arudra Darisanam", "Shivaratri"],
     coordinates: { latitude: 10.9555, longitude: 79.3770 }
   }
