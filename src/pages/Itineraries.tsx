@@ -551,12 +551,6 @@ const Itineraries = () => {
                       <TranslatedText text="Find Accommodation" />
                     </Link>
                   </Button>
-                  <Button variant="outline" className="flex-1" asChild>
-                    <Link to="/chat">
-                      <Camera className="w-4 h-4 mr-2" />
-                      <TranslatedText text="Ask AI Guide" />
-                    </Link>
-                  </Button>
                 </div>
               </CardContent>
             </Card>

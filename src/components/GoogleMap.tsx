@@ -28,12 +28,14 @@ const GoogleMap = ({
   center = { lat: 10.9577, lng: 79.3773 }, // Kumbakonam center
   zoom = 13,
   height = "500px",
-  apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY
+  apiKey
 }: GoogleMapProps) => {
   const [selectedLocation, setSelectedLocation] = useState<MapLocation | null>(null);
 
-  const { apiKey: keyFromHook, isLoading } = useGoogleMapsAPI();
-  const effectiveApiKey = apiKey || keyFromHook || import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const { apiKey: keyFromHook, isLoading, error } = useGoogleMapsAPI();
+  
+  // Priority: prop apiKey > hook apiKey > env variable
+  const effectiveApiKey = apiKey || keyFromHook;
 
   const handleMarkerClick = useCallback((location: MapLocation) => {
     setSelectedLocation(location);
@@ -67,14 +69,14 @@ const GoogleMap = ({
   }
 
   // Fallback map component if Google Maps API is not available
-  if (!effectiveApiKey) {
+  if (!effectiveApiKey || error) {
     return (
       <Card className="shadow-soft" style={{ height }}>
         <CardContent className="p-8 h-full flex flex-col items-center justify-center">
           <MapPin className="w-16 h-16 text-muted-foreground mb-4" />
           <h3 className="text-lg font-semibold text-foreground mb-2">Interactive Map</h3>
-          <p className="text-muted-foreground text-center">
-            Google Maps integration requires API key configuration.
+          <p className="text-muted-foreground text-center mb-2">
+            {error || 'Google Maps integration requires API key configuration.'}
             <br />
             Showing {locations.length} locations in Kumbakonam.
           </p>
