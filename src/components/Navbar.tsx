@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Home, MapPin, MessageCircle, Hotel, Map } from "lucide-react";
+import { Home, MapPin, MessageCircle, Hotel, Map, Info } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import { useLanguage } from "@/hooks/useLanguage";
 import TranslatedText from "./TranslatedText";
@@ -16,6 +16,7 @@ const Navbar = () => {
     { path: "/itineraries", label: "Itineraries", icon: MapPin },
     { path: "/local-guide", label: "Local Guide", icon: Map },
     { path: "/map", label: t("map"), icon: Map },
+    { path: "/about", label: "About", icon: Info },
     { path: "/chat", label: t("chat"), icon: MessageCircle },
   ];
 
