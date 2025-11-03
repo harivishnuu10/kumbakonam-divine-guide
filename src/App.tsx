@@ -13,6 +13,9 @@ import MapView from "./pages/MapView";
 import Chat from "./pages/Chat";
 import Itineraries from "./pages/Itineraries";
 import LocalGuide from "./pages/LocalGuide";
+import Feedback from "./pages/Feedback";
+import Auth from "./pages/Auth";
+import AdminFeedback from "./pages/AdminFeedback";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 import { LanguageContext, useLanguageState } from "./hooks/useLanguage";
@@ -40,6 +43,9 @@ const App = () => {
                 <Route path="/itineraries" element={<Itineraries />} />
                 <Route path="/local-guide" element={<LocalGuide />} />
                 <Route path="/map" element={<MapView />} />
+                <Route path="/feedback" element={<Feedback />} />
+                <Route path="/auth" element={<Auth />} />
+                <Route path="/admin/feedback" element={<AdminFeedback />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/chat" element={<Chat />} />
                 <Route path="*" element={<NotFound />} />
