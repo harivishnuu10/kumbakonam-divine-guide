@@ -30,7 +30,7 @@ const Navbar = () => {
               <span className="text-primary-foreground font-bold text-sm">🕉</span>
             </div>
             <span className="text-xl font-bold bg-gradient-temple bg-clip-text text-transparent">
-              <TranslatedText text="Kumbakonam Temples" />
+              <TranslatedText text="TempleXplore" />
             </span>
           </Link>
 

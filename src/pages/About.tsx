@@ -5,7 +5,7 @@ import TranslatedText from "@/components/TranslatedText";
 
 const About = () => {
   const features = [
-    { icon: MapPin, title: "Temple Information", description: "Detailed guides for Kumbakonam's sacred temples" },
+    { icon: MapPin, title: "Temple Information", description: "Detailed guides for Tamil Nadu's sacred temples" },
     { icon: Hotel, title: "Hotel Recommendations", description: "Curated accommodations for pilgrims and travelers" },
     { icon: Map, title: "Interactive Maps", description: "Navigate with ease using integrated Google Maps" },
     { icon: MessageCircle, title: "AI Chat Assistant", description: "Get instant answers to your travel questions" },
@@ -45,10 +45,10 @@ const About = () => {
         <div className="absolute inset-0 bg-gradient-temple opacity-10 animate-gradient-shift"></div>
         <div className="container mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-temple bg-clip-text text-transparent animate-fade-in">
-            <TranslatedText text="About Kumbakonam Temple Guide" />
+            <TranslatedText text="About TempleXplore" />
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-slide-up">
-            <TranslatedText text="Your comprehensive digital companion for exploring the spiritual and cultural heritage of Kumbakonam's magnificent temples." />
+            <TranslatedText text="Your comprehensive digital companion for exploring the spiritual and cultural heritage of Tamil Nadu's magnificent temples." />
           </p>
         </div>
       </section>
@@ -64,7 +64,7 @@ const About = () => {
             </CardHeader>
             <CardContent>
               <p className="text-lg text-center text-muted-foreground leading-relaxed">
-                <TranslatedText text="We are dedicated to preserving and sharing the rich cultural heritage of Kumbakonam's temples while making spiritual tourism accessible to everyone through innovative technology. Our platform bridges ancient traditions with modern convenience, helping pilgrims and travelers discover, plan, and experience the divine beauty of these sacred spaces." />
+                <TranslatedText text="We are dedicated to preserving and sharing the rich cultural heritage of Tamil Nadu's temples while making spiritual tourism accessible to everyone through innovative technology. Our platform bridges ancient traditions with modern convenience, helping pilgrims and travelers discover, plan, and experience the divine beauty of these sacred spaces." />
               </p>
             </CardContent>
           </Card>
@@ -167,7 +167,7 @@ const About = () => {
       <section className="py-12 px-4 text-center">
         <div className="container mx-auto max-w-3xl">
           <p className="text-lg text-muted-foreground italic">
-            <TranslatedText text="Built with passion to serve pilgrims and travelers exploring the sacred temples of Kumbakonam" />
+            <TranslatedText text="Built with passion to serve pilgrims and travelers exploring the sacred temples of Tamil Nadu" />
           </p>
         </div>
       </section>
