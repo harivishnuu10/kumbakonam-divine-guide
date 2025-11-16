@@ -4,6 +4,7 @@ import { Home, MapPin, MessageCircle, Hotel, Map, Info } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import { useLanguage } from "@/hooks/useLanguage";
 import TranslatedText from "./TranslatedText";
+import templexplore_logo from "@/assets/templexplore-logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -25,9 +26,13 @@ const Navbar = () => {
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-soft">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-temple rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">🕉</span>
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+              <img 
+                src={templexplore_logo} 
+                alt="TempleXplore Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <span className="text-xl font-bold bg-gradient-temple bg-clip-text text-transparent">
               <TranslatedText text="TempleXplore" />
