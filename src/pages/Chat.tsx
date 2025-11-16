@@ -42,7 +42,7 @@ const Chat = () => {
     {
       id: '1',
       type: 'bot',
-      content: '🙏 Vanakkam! I am your AI temple guide for Kumbakonam. I can help you with information about temples, festivals, timings, and spiritual practices. How may I assist you today?',
+      content: '🙏 Vanakkam! I am your AI temple guide for Tamil Nadu. I can help you with information about temples, festivals, timings, and spiritual practices. How may I assist you today?',
       timestamp: new Date()
     }
   ]);
@@ -109,7 +109,7 @@ const Chat = () => {
             <TranslatedText text="AI Temple Guide" />
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            <TranslatedText text="Ask me anything about Kumbakonam temples, festivals, timings, rituals, and more. I'm here to help make your spiritual journey meaningful!" />
+            <TranslatedText text="Ask me anything about Tamil Nadu temples, festivals, timings, rituals, and more. I'm here to help make your spiritual journey meaningful!" />
           </p>
         </div>
 

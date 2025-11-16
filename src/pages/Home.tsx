@@ -82,7 +82,7 @@ const Home = () => {
                 <TranslatedText text="Discover the Divine" />
               </span>
               <span className="block text-gradient animate-shimmer bg-gradient-to-r from-primary via-primary-glow to-accent bg-clip-text text-transparent animate-gradient-shift mt-2">
-                <TranslatedText text="Temples of Kumbakonam" />
+                <TranslatedText text="Temples of Tamil Nadu" />
               </span>
             </h1>
             
