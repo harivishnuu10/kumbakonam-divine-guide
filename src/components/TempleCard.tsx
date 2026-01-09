@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Calendar, Youtube as YoutubeIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import TranslatedText from "./TranslatedText";
+import ShareButton from "./ShareButton";
 import { useLanguage } from "@/hooks/useLanguage";
 
 interface TempleCardProps {
@@ -95,6 +96,13 @@ const TempleCard = ({ id, name, deity, description, timings, image, festivals, c
           <YoutubeIcon className="w-4 h-4 mr-1" />
           Watch on YouTube
         </Button>
+
+        <ShareButton
+          title={`${name} - TempleXplore`}
+          text={`Explore ${name} temple in Kumbakonam`}
+          url={`${window.location.origin}/temple/${id}`}
+          variant="outline"
+        />
       </CardFooter>
     </Card>
   );

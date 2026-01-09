@@ -12,11 +12,15 @@ import {
   Calendar,
   Navigation,
   Bus,
-  Train
+  Train,
+  Printer,
+  Share2
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import TranslatedText from "@/components/TranslatedText";
+import ShareButton from "@/components/ShareButton";
 import { useLanguage } from "@/hooks/useLanguage";
+import { toast } from "@/hooks/use-toast";
 
 const itineraries = [
   {
@@ -391,8 +395,77 @@ const itineraries = [
 const Itineraries = () => {
   const { t } = useLanguage();
 
+  const handlePrint = (itineraryId: string) => {
+    const itinerary = itineraries.find(i => i.id === itineraryId);
+    if (!itinerary) return;
+
+    const printWindow = window.open('', '_blank');
+    if (!printWindow) {
+      toast({
+        title: "Unable to print",
+        description: "Please allow pop-ups for this site to print itineraries.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const printContent = `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>${itinerary.title} - TempleXplore</title>
+          <style>
+            body { font-family: Georgia, serif; padding: 40px; max-width: 800px; margin: 0 auto; }
+            h1 { color: #c45c26; border-bottom: 2px solid #c45c26; padding-bottom: 10px; }
+            h2 { color: #1a1a2e; margin-top: 20px; }
+            .meta { display: flex; gap: 20px; margin-bottom: 20px; color: #666; }
+            .stop { margin: 15px 0; padding: 15px; border-left: 3px solid #c45c26; background: #f9f9f9; }
+            .stop-time { font-weight: bold; color: #c45c26; }
+            .stop-location { font-size: 1.1em; font-weight: bold; margin: 5px 0; }
+            .stop-desc { color: #333; }
+            .stop-tip { font-style: italic; color: #666; margin-top: 5px; }
+            .day-header { background: #c45c26; color: white; padding: 8px 15px; margin: 20px 0 10px; }
+            .footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; font-size: 0.9em; color: #666; }
+            @media print { body { padding: 20px; } }
+          </style>
+        </head>
+        <body>
+          <h1>${itinerary.title}</h1>
+          <p>${itinerary.description}</p>
+          <div class="meta">
+            <span><strong>Duration:</strong> ${itinerary.duration}</span>
+            <span><strong>Cost:</strong> ${itinerary.estimatedCost}</span>
+            <span><strong>Best Season:</strong> ${itinerary.bestSeason}</span>
+          </div>
+          <h2>Detailed Itinerary</h2>
+          ${itinerary.stops.map((stop: any, index: number) => {
+            const prevStop = itinerary.stops[index - 1] as any;
+            const showDay = stop.day && (!prevStop || stop.day !== prevStop.day);
+            return `
+              ${showDay ? `<div class="day-header">${stop.day}</div>` : ''}
+              <div class="stop">
+                ${stop.time ? `<span class="stop-time">${stop.time}</span>` : ''}
+                <div class="stop-location">${stop.location}</div>
+                <div class="stop-desc">${stop.description}</div>
+                ${stop.tips ? `<div class="stop-tip">💡 Tip: ${stop.tips}</div>` : ''}
+              </div>
+            `;
+          }).join('')}
+          <div class="footer">
+            <p>Printed from TempleXplore - Your Guide to Kumbakonam Temples</p>
+            <p>Visit: ${window.location.origin}</p>
+          </div>
+        </body>
+      </html>
+    `;
+
+    printWindow.document.write(printContent);
+    printWindow.document.close();
+    printWindow.print();
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background print:bg-white">
       {/* Hero Section */}
       <div className="bg-gradient-temple text-primary-foreground py-16">
         <div className="container mx-auto px-4">
@@ -426,7 +499,7 @@ const Itineraries = () => {
                       <TranslatedText text={itinerary.description} />
                     </CardDescription>
                   </div>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 items-center">
                     <Badge variant="outline" className="text-sm">
                       <Clock className="w-4 h-4 mr-1" />
                       {itinerary.duration}
@@ -435,6 +508,21 @@ const Itineraries = () => {
                       <Navigation className="w-4 h-4 mr-1" />
                       {itinerary.difficulty}
                     </Badge>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => handlePrint(itinerary.id)}
+                      className="print:hidden"
+                    >
+                      <Printer className="w-4 h-4 mr-1" />
+                      Print
+                    </Button>
+                    <ShareButton
+                      title={`${itinerary.title} - TempleXplore`}
+                      text={`Check out this ${itinerary.duration} itinerary for Kumbakonam temples!`}
+                      url={`${window.location.origin}/itineraries#${itinerary.id}`}
+                      variant="outline"
+                    />
                   </div>
                 </div>
               </CardHeader>

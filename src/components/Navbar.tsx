@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Home, MapPin, MessageCircle, Hotel, Map, Info } from "lucide-react";
+import { Home, MapPin, MessageCircle, Hotel, Map, Info, Mail } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
+import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "@/hooks/useLanguage";
 import TranslatedText from "./TranslatedText";
 import templexplore_logo from "@/assets/templexplore-logo.png";
@@ -17,6 +18,7 @@ const Navbar = () => {
     { path: "/itineraries", label: "Itineraries", icon: MapPin },
     { path: "/local-guide", label: "Local Guide", icon: Map },
     { path: "/map", label: t("map"), icon: Map },
+    { path: "/contact", label: "Contact", icon: Mail },
     { path: "/feedback", label: "Feedback", icon: MessageCircle },
     { path: "/about", label: "About", icon: Info },
     { path: "/chat", label: t("chat"), icon: MessageCircle },
@@ -53,6 +55,7 @@ const Navbar = () => {
                 </Link>
               </Button>
             ))}
+            <ThemeToggle />
             <LanguageSelector />
           </div>
         </div>

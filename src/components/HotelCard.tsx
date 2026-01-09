@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Star, Phone, Wifi, Car, Coffee } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Hotel } from "@/lib/supabase";
+import ShareButton from "./ShareButton";
 import { useLanguage } from "@/hooks/useLanguage";
 
 interface HotelCardProps extends Hotel {}
@@ -114,6 +115,12 @@ const HotelCard = ({
           <Phone className="w-4 h-4 mr-1" />
           {t('bookNow')}
         </Button>
+        <ShareButton
+          title={`${displayName} - TempleXplore`}
+          text={`Book your stay at ${displayName} in Kumbakonam`}
+          url={`${window.location.origin}/hotel/${id}`}
+          variant="outline"
+        />
       </CardFooter>
     </Card>
   );
