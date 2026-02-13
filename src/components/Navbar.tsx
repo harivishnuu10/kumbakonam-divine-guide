@@ -70,7 +70,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Home, MapPin, MessageCircle, Hotel, Map, Info, Mail, Menu, X } from "lucide-react";
+import { Home, MapPin, Hotel, Map, Info, Mail, Menu, X, MessageCircle } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -90,9 +90,9 @@ const Navbar = () => {
     { path: "/local-guide", label: "Local Guide", icon: Map },
     { path: "/map", label: "Map", icon: MapPin },
     { path: "/contact", label: "Contact", icon: Mail },
-    { path: "/feedback", label: "Feedback", icon: MessageCircle },
     { path: "/about", label: "About", icon: Info },
     { path: "/chat", label: t("chat"), icon: MessageCircle },
+    // Removed Feedback from here
   ];
 
   return (
