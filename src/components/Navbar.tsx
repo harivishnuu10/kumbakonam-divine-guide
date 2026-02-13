@@ -68,10 +68,10 @@
 // export default Navbar;
 
 
-import { useState } from "react";
+
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Home, MapPin, Hotel, Map, Info, Mail, Menu, X, MessageCircle } from "lucide-react";
+import { Home, MapPin, MessageCircle, Hotel, Map, Info, Mail } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./ThemeToggle";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -81,7 +81,6 @@ import templexplore_logo from "@/assets/templexplore-logo.png";
 const Navbar = () => {
   const location = useLocation();
   const { t } = useLanguage();
-  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { path: "/", label: t("home"), icon: Home },
@@ -91,17 +90,15 @@ const Navbar = () => {
     { path: "/local-guide", label: "Local Guide", icon: Map },
     { path: "/map", label: "Map", icon: MapPin },
     { path: "/contact", label: "Contact", icon: Mail },
+    // Feedback removed
     { path: "/about", label: "About", icon: Info },
     { path: "/chat", label: t("chat"), icon: MessageCircle },
-    // Feedback removed
   ];
 
   return (
     <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-soft">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-
-          {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 group">
             <div className="w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
               <img 
@@ -115,8 +112,7 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex flex-wrap items-center space-x-1 md:space-x-2">
+          <div className="flex items-center space-x-1 md:space-x-2">
             {navItems.map(({ path, label, icon: Icon }) => (
               <Button
                 key={path}
@@ -125,52 +121,15 @@ const Navbar = () => {
                 asChild
               >
                 <Link to={path} className="flex items-center space-x-1">
-                  <Icon className="w-4 h-4 flex-shrink-0" />
-                  <span className="hidden lg:inline truncate">{label}</span>
+                  <Icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{label}</span>
                 </Link>
               </Button>
             ))}
-
-            {/* ThemeToggle and LanguageSelector next to each other */}
             <ThemeToggle />
             <LanguageSelector />
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-
-        {/* Mobile Dropdown Menu */}
-        {isOpen && (
-          <div className="md:hidden mt-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-300">
-            {navItems.map(({ path, label, icon: Icon }) => (
-              <Link
-                key={path}
-                to={path}
-                onClick={() => setIsOpen(false)}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition ${
-                  location.pathname === path
-                    ? "bg-gradient-temple text-white"
-                    : "hover:bg-muted"
-                }`}
-              >
-                <Icon className="w-4 h-4 flex-shrink-0" />
-                <span className="truncate">{label}</span>
-              </Link>
-            ))}
-
-            {/* Dark Mode and LanguageSelector side by side */}
-            <div className="flex items-center space-x-2 px-4 pt-4 border-t border-border">
-              <ThemeToggle />
-              <LanguageSelector />
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   );
