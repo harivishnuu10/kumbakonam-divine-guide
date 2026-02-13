@@ -67,6 +67,7 @@
 
 // export default Navbar;
 
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -92,7 +93,7 @@ const Navbar = () => {
     { path: "/contact", label: "Contact", icon: Mail },
     { path: "/about", label: "About", icon: Info },
     { path: "/chat", label: t("chat"), icon: MessageCircle },
-    // Removed Feedback from here
+    // Feedback removed
   ];
 
   return (
@@ -130,7 +131,7 @@ const Navbar = () => {
               </Button>
             ))}
             <ThemeToggle />
-            <LanguageSelector />
+            <LanguageSelector /> {/* Now comes after Dark Mode */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -163,7 +164,7 @@ const Navbar = () => {
 
             <div className="flex items-center justify-between px-4 pt-4 border-t border-border">
               <ThemeToggle />
-              <LanguageSelector />
+              <LanguageSelector /> {/* After Dark Mode */}
             </div>
           </div>
         )}
@@ -173,4 +174,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
