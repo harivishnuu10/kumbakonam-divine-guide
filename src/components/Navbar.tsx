@@ -17,7 +17,7 @@ const Navbar = () => {
     { path: "/hotels", label: t("hotels"), icon: Hotel },
     { path: "/itineraries", label: "Itineraries", icon: MapPin },
     { path: "/local-guide", label: "Local Guide", icon: Map },
-    { path: "/map", label: t("map"), icon: Map },
+    
     { path: "/contact", label: "Contact", icon: Mail },
     { path: "/feedback", label: "Feedback", icon: MessageCircle },
     { path: "/about", label: "About", icon: Info },
