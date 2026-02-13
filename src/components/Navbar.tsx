@@ -67,7 +67,6 @@
 
 // export default Navbar;
 
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
@@ -116,7 +115,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-1 md:space-x-2">
+          <div className="hidden md:flex flex-wrap items-center space-x-1 md:space-x-2">
             {navItems.map(({ path, label, icon: Icon }) => (
               <Button
                 key={path}
@@ -125,8 +124,8 @@ const Navbar = () => {
                 asChild
               >
                 <Link to={path} className="flex items-center space-x-1">
-                  <Icon className="w-4 h-4" />
-                  <span className="hidden lg:inline">{label}</span>
+                  <Icon className="w-4 h-4 flex-shrink-0" />
+                  <span className="hidden lg:inline truncate">{label}</span>
                 </Link>
               </Button>
             ))}
@@ -143,9 +142,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Dropdown */}
+        {/* Mobile Dropdown Menu */}
         {isOpen && (
-          <div className="md:hidden mt-4 space-y-2 animate-in slide-in-from-top-2 duration-300">
+          <div className="md:hidden mt-4 space-y-2 max-h-[calc(100vh-4rem)] overflow-y-auto animate-in slide-in-from-top-2 duration-300">
             {navItems.map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
@@ -157,8 +156,8 @@ const Navbar = () => {
                     : "hover:bg-muted"
                 }`}
               >
-                <Icon className="w-4 h-4" />
-                <span>{label}</span>
+                <Icon className="w-4 h-4 flex-shrink-0" />
+                <span className="truncate">{label}</span>
               </Link>
             ))}
 
@@ -174,3 +173,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
