@@ -66,9 +66,11 @@
 // };
 
 // export default Navbar;
+
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import { Home, MapPin, MessageCircle, Hotel, Map, Info, Mail, Menu, X } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./ThemeToggle";
@@ -100,19 +102,21 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <img
-              src={templexplore_logo}
-              alt="TempleXplore Logo"
-              className="w-10 h-10 object-contain"
-            />
+          <Link to="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 rounded-full flex items-center justify-center transition-transform group-hover:scale-110">
+              <img 
+                src={templexplore_logo} 
+                alt="TempleXplore Logo" 
+                className="w-full h-full object-contain"
+              />
+            </div>
             <span className="text-xl font-bold bg-gradient-temple bg-clip-text text-transparent">
               <TranslatedText text="TempleXplore" />
             </span>
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1 md:space-x-2">
             {navItems.map(({ path, label, icon: Icon }) => (
               <Button
                 key={path}
@@ -122,7 +126,7 @@ const Navbar = () => {
               >
                 <Link to={path} className="flex items-center space-x-1">
                   <Icon className="w-4 h-4" />
-                  <span>{label}</span>
+                  <span className="hidden lg:inline">{label}</span>
                 </Link>
               </Button>
             ))}
@@ -139,9 +143,9 @@ const Navbar = () => {
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Dropdown */}
         {isOpen && (
-          <div className="md:hidden mt-4 space-y-2 animate-fade-in">
+          <div className="md:hidden mt-4 space-y-2 animate-in slide-in-from-top-2 duration-300">
             {navItems.map(({ path, label, icon: Icon }) => (
               <Link
                 key={path}
@@ -168,3 +172,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;
