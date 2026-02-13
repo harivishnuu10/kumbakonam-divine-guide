@@ -137,6 +137,7 @@ const About = () => {
             ))}
           </div>
         </div>
+        <div>hello</div>
       </section>
 
       {/* Technology Stack */}
