@@ -9,7 +9,7 @@ import Temples from "./pages/Temples";
 import TempleDetail from "./pages/TempleDetail";
 import Hotels from "./pages/Hotels";
 import HotelDetail from "./pages/HotelDetail";
-import MapView from "./pages/MapView";
+
 import Chat from "./pages/Chat";
 import Itineraries from "./pages/Itineraries";
 import LocalGuide from "./pages/LocalGuide";
@@ -43,7 +43,7 @@ const App = () => {
                 <Route path="/hotel/:id" element={<HotelDetail />} />
                 <Route path="/itineraries" element={<Itineraries />} />
                 <Route path="/local-guide" element={<LocalGuide />} />
-                <Route path="/map" element={<MapView />} />
+                
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/feedback" element={<Feedback />} />
                 <Route path="/auth" element={<Auth />} />
