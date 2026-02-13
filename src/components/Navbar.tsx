@@ -130,8 +130,11 @@ const Navbar = () => {
                 </Link>
               </Button>
             ))}
+
+            {/* Dark Mode toggle first */}
             <ThemeToggle />
-            <LanguageSelector /> {/* Now comes after Dark Mode */}
+            {/* Language selector immediately after Dark Mode */}
+            <LanguageSelector />
           </div>
 
           {/* Mobile Menu Button */}
@@ -162,9 +165,10 @@ const Navbar = () => {
               </Link>
             ))}
 
+            {/* Dark Mode first, LanguageSelector immediately after */}
             <div className="flex items-center justify-between px-4 pt-4 border-t border-border">
               <ThemeToggle />
-              <LanguageSelector /> {/* After Dark Mode */}
+              <LanguageSelector />
             </div>
           </div>
         )}
