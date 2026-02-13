@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import MapView from "./pages/MapView";
 import Temples from "./pages/Temples";
 import TempleDetail from "./pages/TempleDetail";
 import Hotels from "./pages/Hotels";
@@ -42,6 +43,7 @@ const App = () => {
                 <Route path="/hotels" element={<Hotels />} />
                 <Route path="/hotel/:id" element={<HotelDetail />} />
                 <Route path="/itineraries" element={<Itineraries />} />
+                <Route path="/map" element={<MapView />} />
                 <Route path="/local-guide" element={<LocalGuide />} />
                 
                 <Route path="/contact" element={<Contact />} />

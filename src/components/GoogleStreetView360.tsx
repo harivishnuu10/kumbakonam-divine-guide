@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Navigation, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
-import { supabase } from "@/lib/supabase";
+import { useGoogleMapsAPI } from "@/hooks/useGoogleMapsAPI";
 
 interface GoogleStreetView360Props {
   latitude: number;
@@ -25,32 +25,13 @@ const GoogleStreetView360 = ({
   deity,
   height = "400px"
 }: GoogleStreetView360Props) => {
-  const [apiKey, setApiKey] = useState<string | null>(null);
-  const [apiLoading, setApiLoading] = useState(true);
-  const [apiError, setApiError] = useState<string | null>(null);
+  const { apiKey, isLoading: apiLoading, error: apiError } = useGoogleMapsAPI();
   const streetViewRef = useRef<HTMLDivElement>(null);
   const panoramaRef = useRef<any>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasStreetView, setHasStreetView] = useState(true);
   const [heading, setHeading] = useState(0);
   const [zoom, setZoom] = useState(1);
-
-  useEffect(() => {
-    const fetchKey = async () => {
-      try {
-        setApiLoading(true);
-        const { data, error } = await supabase.functions.invoke('get-google-maps-key');
-        if (error) throw error;
-        if (data?.apiKey) setApiKey(data.apiKey);
-        else setApiError('Google Maps API key not configured');
-      } catch {
-        setApiError('Failed to load Google Maps API key');
-      } finally {
-        setApiLoading(false);
-      }
-    };
-    fetchKey();
-  }, []);
 
   useEffect(() => {
     if (!apiKey || apiLoading) return;
