@@ -292,7 +292,7 @@ const LocalGuide = () => {
       category: "Getting There",
       icon: Train,
       tips: [
-        "Train: Kumbakonam Junction - well connected",
+        "Train: Kumbakonam - well connected",
         "From Chennai: 6-7 hours by train",
         "From Trichy: 1.5 hours by bus/train",
         "Nearest airport: Trichy (90 km)",
