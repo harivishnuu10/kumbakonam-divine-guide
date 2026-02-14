@@ -21,6 +21,13 @@ const About = () => {
       description: "Specialized in frontend architecture and user experience design, bringing the vision of seamless temple exploration to life through modern web technologies.",
       gradient: "from-temple-primary to-temple-accent"
     },
+     {
+      name: "Harivishnu",
+      role: "Full Stack Developer",
+      initials: "HV",
+      description: "Specialized in frontend architecture and user experience design, bringing the vision of seamless temple exploration to life through modern web technologies.",
+      gradient: "from-temple-primary to-temple-accent"
+    },
     {
       name: "Yuvansankar",
       role: "Full Stack Developer",
