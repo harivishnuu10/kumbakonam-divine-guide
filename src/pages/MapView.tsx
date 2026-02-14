@@ -13,17 +13,17 @@ import TranslatedText from '@/components/TranslatedText';
 
 // Sample temples
 const sampleTemples = [
-  { id: 'adi-kumbeswarar', name: 'Adi Kumbeswarar Temple', deity: 'Lord Shiva', latitude: 10.9577, longitude: 79.3773, description: '7th century Chola temple. Famous for Mahamaham festival.' },
-  { id: 'sarangapani', name: 'Sarangapani Temple', deity: 'Lord Vishnu', latitude: 10.9614, longitude: 79.3776, description: 'One of 108 Divya Desams with towering 12-tier gopuram.' },
-  { id: 'ramaswamy', name: 'Ramaswamy Temple', deity: 'Lord Rama', latitude: 10.9598, longitude: 79.3751, description: '17th century masterpiece with Ramayana frescoes.' },
-  { id: 'nageshwara', name: 'Nageshwara Temple', deity: 'Lord Shiva', latitude: 10.9589, longitude: 79.3792, description: '9th century temple with unique astronomical alignment.' },
-  { id: 'chakrapani', name: 'Chakrapani Temple', deity: 'Lord Vishnu', latitude: 10.9561, longitude: 79.3724, description: 'Sukran temple in Navagraha circuit. Healing properties.' },
-  { id: 'someswarar', name: 'Someswarar Temple', deity: 'Lord Shiva', latitude: 10.9542, longitude: 79.3758, description: 'Dedicated to lunar aspect of Shiva.' },
+  { id: 'adi-kumbeswarar', name: 'Adi Kumbeswarar Temple', deity: 'Lord Shiva', latitude: 10.95833, longitude: 79.37111, description: '7th century Chola temple. Famous for Mahamaham festival.' },
+  { id: 'sarangapani', name: 'Sarangapani Temple', deity: 'Lord Vishnu', latitude: 10.95944, longitude: 79.37472, description: 'One of 108 Divya Desams with towering 12-tier gopuram.' },
+  { id: 'ramaswamy', name: 'Ramaswamy Temple', deity: 'Lord Rama', latitude: 10.957208, longitude: 79.373659, description: '17th century masterpiece with Ramayana frescoes.' },
+  { id: 'nageshwara', name: 'Nageshwara Temple', deity: 'Lord Shiva', latitude: 10.958748, longitude: 79.378659, description: '9th century temple with unique astronomical alignment.' },
+  { id: 'chakrapani', name: 'Chakrapani Temple', deity: 'Lord Vishnu', latitude: 10.963351, longitude: 79.373170, description: 'Sukran temple in Navagraha circuit. Healing properties.' },
+  { id: 'someswarar', name: 'Someswarar Temple', deity: 'Lord Shiva', latitude: 10.98333, longitude: 79.38333, description: 'Dedicated to lunar aspect of Shiva.' },
 ];
 
 const sampleHotels = [
-  { id: 'grand-kumbakonam', name: 'Hotel Grand Kumbakonam', latitude: 10.9595, longitude: 79.3797, description: 'Premium hotel with modern amenities', rating: 4 },
-  { id: 'temple-view-inn', name: 'Temple View Inn', latitude: 10.9587, longitude: 79.3778, description: 'Budget-friendly with temple views', rating: 3 },
+  { id: 'grand-kumbakonam', name: 'Hotel Grand Kumbakonam', latitude: 10.9621, longitude: 79.3912, description: 'Premium hotel with modern amenities', rating: 4 },
+  { id: 'temple-view-inn', name: 'Temple View Inn', latitude: 10.9595, longitude: 79.3780, description: 'Budget-friendly with temple views', rating: 3 },
 ];
 
 const MapView = () => {
