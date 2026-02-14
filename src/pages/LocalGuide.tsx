@@ -561,11 +561,11 @@ const LocalGuide = () => {
                 <div className="grid md:grid-cols-3 gap-4 text-sm">
                   <div>
                     <p className="font-semibold"><TranslatedText text="Police" /></p>
-                    <p className="text-muted-foreground">100 / +91 435 242 2100</p>
+                    <p className="text-muted-foreground">100 / +91 0435 240 3244</p>
                   </div>
                   <div>
                     <p className="font-semibold"><TranslatedText text="Ambulance" /></p>
-                    <p className="text-muted-foreground">108 / 102</p>
+                    <p className="text-muted-foreground">108</p>
                   </div>
                   <div>
                     <p className="font-semibold"><TranslatedText text="Fire Service" /></p>
@@ -573,15 +573,15 @@ const LocalGuide = () => {
                   </div>
                   <div>
                     <p className="font-semibold"><TranslatedText text="Tourist Help" /></p>
-                    <p className="text-muted-foreground">+91 435 243 0888</p>
+                    <p className="text-muted-foreground">No Information</p>
                   </div>
                   <div>
                     <p className="font-semibold"><TranslatedText text="Hospital" /></p>
-                    <p className="text-muted-foreground">Government Hospital: +91 435 243 0444</p>
+                    <p className="text-muted-foreground">Government Hospital: No Information</p>
                   </div>
                   <div>
                     <p className="font-semibold"><TranslatedText text="Women Helpline" /></p>
-                    <p className="text-muted-foreground">1091</p>
+                    <p className="text-muted-foreground">181</p>
                   </div>
                 </div>
               </CardContent>
