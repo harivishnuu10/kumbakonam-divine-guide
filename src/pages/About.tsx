@@ -28,13 +28,6 @@ const About = () => {
       description: "Expert in backend systems and API integration, ensuring robust data management and smooth functionality across all features of the platform.",
       gradient: "from-temple-accent to-temple-secondary"
     }
-    {
-      name: "Thirumalai",
-      role: "Full Stack Developer",
-      initials: "YS",
-      description: "Expert in backend systems and API integration, ensuring robust data management and smooth functionality across all features of the platform.",
-      gradient: "from-temple-accent to-temple-secondary"
-    }
   ];
 
   const techStack = [
