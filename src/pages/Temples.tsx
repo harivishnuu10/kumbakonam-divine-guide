@@ -143,7 +143,8 @@ const templeData = [
 const deityFilters = ["All", "Lord Shiva", "Lord Vishnu", "Lord Rama", "Navagraha"];
 
 const Temples = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchParams] = useSearchParams();
+  const [searchTerm, setSearchTerm] = useState(searchParams.get("search") || "");
   const [selectedDeity, setSelectedDeity] = useState("All");
 
   const filteredTemples = templeData.filter((temple) => {
