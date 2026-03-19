@@ -50,6 +50,15 @@ const stats = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/temples?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
