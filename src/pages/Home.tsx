@@ -3,7 +3,8 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Search, MapPin, Clock, Star, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import heroImage from "@/assets/hero-temple.jpg";
 import TempleCard from "@/components/TempleCard";
 import TranslatedText from "@/components/TranslatedText";
@@ -49,6 +50,15 @@ const stats = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = () => {
+    if (searchQuery.trim()) {
+      navigate(`/temples?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
@@ -108,15 +118,17 @@ const Home = () => {
 
             {/* Enhanced Quick Search */}
             <div className="glass rounded-2xl p-6 border border-white/30 shadow-3d animate-reveal hover-ultra-3d" style={{ animationDelay: '0.6s' }}>
-              <div className="flex gap-3">
+              <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="flex gap-3">
                 <Input
                   placeholder="Search temples, deities, or festivals..."
                   className="bg-white/20 border-white/30 text-white placeholder:text-white/70 focus:bg-white/30 focus:border-white/50 transition-all h-12 text-lg"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
                 />
-                <Button variant="temple" className="hover:scale-110 transition-all shadow-temple h-12 px-6">
+                <Button type="submit" variant="temple" className="hover:scale-110 transition-all shadow-temple h-12 px-6">
                   <Search className="w-5 h-5 icon-glow" />
                 </Button>
-              </div>
+              </form>
             </div>
           </div>
         </div>
