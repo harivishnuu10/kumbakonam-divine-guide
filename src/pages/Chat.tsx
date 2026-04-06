@@ -42,7 +42,7 @@ const Chat = () => {
     {
       id: '1',
       type: 'bot',
-      content: '🙏 Vanakkam! I am your AI temple guide for Tamil Nadu. I can help you with information about temples, festivals, timings, and spiritual practices. How may I assist you today?',
+      content: '🙏 Vanakkam! I am your AI temple guide for Tamil Nadu. I Can Help You With Information About Temples, Festivals, Timings, And Spiritual Practices. How May I Assist You Today?',
       timestamp: new Date()
     }
   ]);
@@ -87,7 +87,7 @@ const Chat = () => {
       setMessages(prev => [...prev, botResponse]);
     } catch (error) {
       console.error('Chat error:', error);
-      toast.error('Failed to get response. Please try again.');
+      toast.error('Failed to Get Response. Please try again.');
       setMessages(prev => prev.filter(msg => msg.id !== userMessage.id));
     } finally {
       setIsLoading(false);
